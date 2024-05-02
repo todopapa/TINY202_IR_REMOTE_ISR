@@ -15,15 +15,15 @@ TV-B-GONEはライセンスフリーで、Adafruit社が最初の[TV-BーGONEキ
 ![TV-B-GONE Adafruit schematics_2024-05-02 235112](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/751ad074-005d-4b4e-a7a8-8ae2165690f8)TV_B_GONE_1R1TV_B_GONE_1R1_AV_AV
 Adafruit TV-BーGONE V1.1　回路図
 
-## **TV_B_GONE_11_AVR**
+## **TINY202_IR_REMOTE_ISR1**
 
-は、AVRマイコン ATTNY85 のファームウェアです。  
+は、AVRマイコン ATTNY202 のファームウェアです。  
 
-* ATTINY85 8pin DIP 対応  
+* ATTINY202 8pin DIP 対応  
 * ATMEL STUDIO（現Microchip Studio）対応  
-* 書き込みは AVR ISP MK２または、パラレルプログラマーTL866IIを使用する  
-* [Arduino as ISP](https://www.instructables.com/How-to-Program-an-Attiny85-From-an-Arduino-Uno/)  
-   Arduino Uno もArduino as ISPとして、ATTINY85の書き込み機としてつかえる  
+* 書き込みは UPDIを使用する  
+* [Adafruit UPDI Friend]([https://www.instructables.com/How-to-Program-an-Attiny85-From-an-Arduino-Uno/](https://learn.adafruit.com/adafruit-updi-friend/overview))  
+   Arduino Unoもファームを書き換え jtag2UPDIとして、ATTINY202の書き込み機としてつかえるようです  
 
 ## 回路図
 
