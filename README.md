@@ -9,6 +9,7 @@
 
 1.CPUをATTINY85から、ATTINY202に移植する。  
 2.TVの電源ON/OFF制御だけでなく、汎用のIRリモコンとして使用できるようにする。  
+3.そのためにスイッチを３個つけて、ピンチェンジ割り込みを使って３種類の制御ができるようにする。  
 
 ### このプロジェクトの概要
 TV-B-GONEはライセンスフリーで、Adafruit社が最初の[TV-BーGONEキット](https://www.adafruit.com/product/73)を出したのは2005年？前後で、8PINのAVRマイコン ATTINY85 CPUを使って制御しています。  
@@ -95,6 +96,10 @@ mode切り替え：34h、4Ah、90h　/　14h、84h END
 UP　　　　　：34h、4Ah、90h　/　54h、C4h END  
 DOWN　　　　：34h、4Ah、90h　/　D4h、44h END  
 
+## スリープ時電流
+ATTINY202のスリープ時電流を測定しました。  
+0.1uAで、ATTINY85の0.2～0.3uAより明らかに小さいです。  
+![IMG_0471](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/f6b65397-b703-45a6-a5ef-4505950a0ba0)
 
 
 
