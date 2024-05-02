@@ -99,7 +99,7 @@ DOWN　　　　：34h、4Ah、90h　/　D4h、44h END
 ## スリープ時電流
 ATTINY202のスリープ時電流を測定しました。  
 0.1uAで、ATTINY85の0.2～0.3uAより明らかに小さいです。  
-![IMG_0471](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/f6b65397-b703-45a6-a5ef-4505950a0ba0)
-
+<!--![IMG_0471](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/f6b65397-b703-45a6-a5ef-4505950a0ba0)-->
+<img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/f6b65397-b703-45a6-a5ef-4505950a0ba0" width="480">  
 
 
