@@ -29,30 +29,39 @@ Adafruit TV-BーGONE V1.1　回路図
 ## 回路図
 
 ![ATTINY202 IR REMOTE ](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/8d0a1272-e935-4369-9447-d28aac719b77)
+
 トドお父さん版 TINY202_IR_REMOTE V1.1 for ATMEL STUDIO　回路図  
 
-回路はAdafruitのV1.1をベースにしているので単純です。  
-ATTINY85のRESETピンにタクトSWを入れ、タクトSWを押したときにTINY85にハードRESETが入り、プログラムが先頭から走ります。  
-写真はタクトSWが２つになっていますが、将来的に空きピンにタクトSWを入れれば、ON/OFF以外の他のコントロールもできます。  
-(その場合入力ピンに内部プルアップ指定をします）  
-IR LEDは、PB0, PB1の２つを使ってますが、片方だけでもOKです。  
-動作確認用の赤LEDは3.3kΩを入れてます。最近のLEDは感度が高いのでこれでOKのようです。(暗い場合は1kΩ等に変更してください）  
-IR LEDには直列に1Ωの抵抗をいれてますが、実験的には無くてもOKの様です。（Q1トランジスタのベース電流ｘHfeで流れる）  
+回路はAdafruitのV1.1をベースにして、ATTINY85からATTINY202に変更しています。
+また、オリジナルはRESETを"L"にしてプログラムを先頭から走らせるようにしていました。
+ATTINY202はRESETがUPDIピンにアサインされてハードRESETが使えません。
+このため、ピンチェンジ割り込みを使ってプログラムを制御します。
+今回はPA1=SW1，PA6=SW2、PA7=SW0として、タクトSWを3つ実装して３種のIRコードを発信できるようにしています。  
+(この場合、各入力ピンに内部プルアップ指定、割り込み指定をします）  
+IR LEDは、PA3を、動作確認用のLEDはPA2をアサインしています。  
+動作確認用のLEDは2kΩを入れてます。最近のLEDは感度が高いのでこれでOKのようです。(暗い場合は1kΩ等に変更してください）  
+IR LEDはPA3のTIMER1とCMP0の比較が一致した時に、WO0がトグルする構成になっています。
+PA3のWO0信号は330Ωを介しQ1トランジスタ2SC1815のベースに入力しています。Q1のコレクタに２つのIR LEDを並列に接続して
+パルス的に大電流で駆動します。IR LEDには直列に1Ωの抵抗をいれてますが、実験的には無くてもOKの様です。
+（Q1トランジスタのベース電流ｘhfeで流れる）  
 
 ## ATMEL STUDIOプロジェクトファイル
 
-頭のTV_B_GONE_11_AVR.atsln がプロジェクトファイルです。TV_B_GONE_11_AVRフォルダ内には  
+頭のTINY202_IR_REMOTE_ISR1.atsln がプロジェクトファイルです。TV_B_GONE_11_AVRフォルダ内には  
 * main.c : メインプログラム  
-* NAcodes.c : 北米/アジア仕向け 各社テレビのON/OFF 赤外線コードの構造体  
+* IRcodes.c : 北米/アジア仕向け 各社テレビのON/OFF 赤外線コードの構造体  
 * util.c : デバッグ用ソフトUart (未使用）  
 * Debugフォルダ：生成したHEXファイル、ELFファイルが入る  
 
 ## 使い方
-
-タクトSWを押すとテレビのリモコンコードの発信が始まります。  
-各社リモコンコード発信の動作中は赤LEDが点滅して動作中を知らせます。  
+今回はPanasonicの天井灯のリモコンを制御します。
+タクトSWを押すとリモコンコードの発信が始まります。
+リモコンは"mode切り替え", "UP", "DOWN" の3種類のコードを発信します。
+リモコンコード発信の動作中は赤LEDが点滅して動作中を知らせます。  
 全部のコードが発振されるまで（テレビが消えるまで）押し続けてください。  
-全部発信されると、最後に4回LEDが短く点灯した後、消灯します。  
-動作が終わると、TINY85はSleepモードに入り、動作電流は < 1uA になります。  
-Adafruitによると、このガジェットに対応するテレビは、下記のようです。家電店等でテストするのは止めたほうがいいかもしれせん。  
-Acer, Admiral, Aiko, Alleron, Anam National, AOC, Apex, Baur, Bell&Howell, Brillian, Bush, Candle, Citizen, Contec, Cony, Crown, Curtis Mathes, Daiwoo, Dimensia, Electrograph, Electrohome, Emerson, Fisher, Fujitsu, Funai, Gateway, GE, Goldstar, Grundig, Grunpy, Hisense, Hitachi, Infinity, JBL, JC Penney, JVC, LG, Logik, Loewe, LXI, Majestic, Magnavox, Marantz, Maxent, Memorex, Mitsubishi, MGA, Montgomery Ward, Motorola, MTC, NEC, Neckermann, NetTV, Nikko, NTC, Otto Versand, Palladium, Panasonic, Philco, Philips, Pioneer, Portland, Proscan, Proton, Pulsar, Pye, Quasar, Quelle, Radio Shack, Realistic, RCA, Samsung, Sampo, Sansui, Sanyo, Scott, Sears, SEI, Sharp, Signature, Simpson, Sinudyne, Sonolor, Sony, Soundesign, Sylviana, Tatung, Teknika, Thompson, Toshiba, Universum, Viewsonic, Wards, White Westinghouse, Zenith
+ボタンを離してIRコードの発信が終わると、最後に4回LEDが短く点灯した後、動作が終わります。  
+動作が終わると、TINY202はSleepモードに入り、動作電流は < 1uA になります。 (約0.1uA)
+このリモコンの動作モードは、ボタンを押している間連続で同じIRコードを発信します。
+単発でよい場合は、コードの226行目、252行目をコメントアウトしてください。
+226　// while ((~PORTA.IN & SW0_PIN) | (~PORTA.IN & SW1_PIN) | (~PORTA.IN & SW2_PIN)){ //while SW0 or SW1 or SW2 is pressed then continue IR LED flashing
+252 //	}
