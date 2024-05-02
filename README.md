@@ -1,5 +1,5 @@
 # TINY202_IR_REMOTE_ISR for ATMEL STUDIO 7.0
-![TV-B-GONE 124058](https://github.com/todopapa/TV_B_GONE_11_AVR/assets/16860878/4fface5c-bb94-4956-87a0-1fbb0f91fc2d)
+![TINY202_IR_REMOTE 2024-05-02 233458](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/7a59901e-49d1-468d-9323-dc31d36176b7)
 
 ## はじめに
 ### TB-B-GONEをベースに汎用リモコンを作る
@@ -12,7 +12,7 @@
 TV-B-GONEはライセンスフリーで、Adafruit社が最初の[TV-BーGONEキット](https://www.adafruit.com/product/73)を出したのは2005年？前後で、8PINのAVRマイコン ATTINY85 CPUを使って制御しています。  
 ハードウェアとファームウェアは当初のV1.0から、いまはV1.2に進化しています。  
 
-![TV-B-GONE_ORG](https://github.com/todopapa/TV_B_GONE_11_AVR/assets/16860878/55073afe-6188-482c-b98b-c53ae8d22c4e)
+![TV-B-GONE_ORG](https://github.com/todopapa/TV_B_GONE_1R1TV_B_GONE_1R1_AV_AV/assets/16860878/55073afe-6188-482c-b98b-c53ae8d22c4e)TV_B_GONE_1R1TV_B_GONE_1R1_AV_AV
 Adafruit TV-BーGONE V1.1　回路図
 
 ## **TV_B_GONE_11_AVR**
@@ -27,8 +27,8 @@ Adafruit TV-BーGONE V1.1　回路図
 
 ## 回路図
 
-![TV-B-G0NE_V11_schema2](https://github.com/todopapa/TV_B_GONE_11_AVR/assets/16860878/138e9fda-cf0d-42bb-96d1-0e9e03881eaa)
-トドお父さん版 TV-BーGONE V1.1 for ATMEL STUDIO　回路図  
+![ATTINY202 IR REMOTE ](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/8d0a1272-e935-4369-9447-d28aac719b77)
+トドお父さん版 TINY202_IR_REMOTE V1.1 for ATMEL STUDIO　回路図  
 
 回路はAdafruitのV1.1をベースにしているので単純です。  
 ATTINY85のRESETピンにタクトSWを入れ、タクトSWを押したときにTINY85にハードRESETが入り、プログラムが先頭から走ります。  
