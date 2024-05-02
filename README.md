@@ -75,7 +75,7 @@ IR LEDには直列に1Ωの抵抗をいれてますが、実験的には無く�
 　　252 //	}  
 
 ## リモコンコード
-![パナ天井灯リモコン 2024-05-03 004954](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/f1b21625-a868-4491-9a7b-8a4c05b9795c)  
+<img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/f1b21625-a868-4491-9a7b-8a4c05b9795c" width="360">
 パナソニック天井灯リモコン　HK9337　
 このリモコンはM5060という三菱のリモコン用ICを使用しています。
 もうこのICは手に入りませんが、コンパチのPT2560という中華ICのデータシートが見つかりましたので、これを参考に
