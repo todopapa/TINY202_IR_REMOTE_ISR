@@ -83,7 +83,9 @@ IR LEDには直列に1Ωの抵抗をいれてますが、実験的には無く�
 もうこのICは手に入りませんが、コンパチのPT2560[PT2560](url)という中華ICのデータシートが見つかりましたので、これを参考に    
 必要なコードを解析していきます。（実際はオシロスコープによる波形解析を行った）  
 
-![PT2560 CODE 2024-05-03 011738](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/00e489bc-4ffc-4ae1-a2fb-4cbaf296b434)  
+<!--![PT2560 CODE 2024-05-03 011738](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/00e489bc-4ffc-4ae1-a2fb-4cbaf296b434)  -->
+<img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/00e489bc-4ffc-4ae1-a2fb-4cbaf296b434" width="480">   
+
 この図でLeader Codeは3.57ｍSと1.80ｍS、”0”は420/480uS、"1"は420/1320uSでした。  
 コードは下記でした。　キャリア周波数は38KHzがICの仕様ですが、440kHzのセラミック発振器を使って36.5kHzでした。  
 これに従って、IRcodes.c　を修正しています。  
