@@ -28,7 +28,6 @@ Adafruit TV-BーGONE V1.1　回路図
 ## 回路図
 
 ![ATTINY202 IR REMOTE ](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/8d0a1272-e935-4369-9447-d28aac719b77)
-
 トドお父さん版 TINY202_IR_REMOTE V1.1 for ATMEL STUDIO　回路図  
 
 回路はAdafruitのV1.1をベースにしているので単純です。  
