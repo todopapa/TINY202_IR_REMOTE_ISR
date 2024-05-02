@@ -1,0 +1,497 @@
+
+TINY202_TVBG_11_AVR.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00803f80  00000660  000006d4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000660  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  000006d6  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000708  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000070  00000000  00000000  00000744  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000229b  00000000  00000000  000007b4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00001413  00000000  00000000  00002a4f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000057e  00000000  00000000  00003e62  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000d8  00000000  00000000  000043e0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00001076  00000000  00000000  000044b8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000037b  00000000  00000000  0000552e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000048  00000000  00000000  000058a9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	51 c2       	rjmp	.+1186   	; 0x4a4 <__ctors_end>
+   2:	63 c2       	rjmp	.+1222   	; 0x4ca <__bad_interrupt>
+   4:	62 c2       	rjmp	.+1220   	; 0x4ca <__bad_interrupt>
+   6:	61 c2       	rjmp	.+1218   	; 0x4ca <__bad_interrupt>
+   8:	60 c2       	rjmp	.+1216   	; 0x4ca <__bad_interrupt>
+   a:	5f c2       	rjmp	.+1214   	; 0x4ca <__bad_interrupt>
+   c:	5e c2       	rjmp	.+1212   	; 0x4ca <__bad_interrupt>
+   e:	5d c2       	rjmp	.+1210   	; 0x4ca <__bad_interrupt>
+  10:	5c c2       	rjmp	.+1208   	; 0x4ca <__bad_interrupt>
+  12:	5b c2       	rjmp	.+1206   	; 0x4ca <__bad_interrupt>
+  14:	5a c2       	rjmp	.+1204   	; 0x4ca <__bad_interrupt>
+  16:	59 c2       	rjmp	.+1202   	; 0x4ca <__bad_interrupt>
+  18:	58 c2       	rjmp	.+1200   	; 0x4ca <__bad_interrupt>
+  1a:	57 c2       	rjmp	.+1198   	; 0x4ca <__bad_interrupt>
+  1c:	56 c2       	rjmp	.+1196   	; 0x4ca <__bad_interrupt>
+  1e:	55 c2       	rjmp	.+1194   	; 0x4ca <__bad_interrupt>
+  20:	54 c2       	rjmp	.+1192   	; 0x4ca <__bad_interrupt>
+  22:	53 c2       	rjmp	.+1190   	; 0x4ca <__bad_interrupt>
+  24:	52 c2       	rjmp	.+1188   	; 0x4ca <__bad_interrupt>
+  26:	51 c2       	rjmp	.+1186   	; 0x4ca <__bad_interrupt>
+  28:	50 c2       	rjmp	.+1184   	; 0x4ca <__bad_interrupt>
+  2a:	4f c2       	rjmp	.+1182   	; 0x4ca <__bad_interrupt>
+  2c:	4e c2       	rjmp	.+1180   	; 0x4ca <__bad_interrupt>
+  2e:	4d c2       	rjmp	.+1178   	; 0x4ca <__bad_interrupt>
+  30:	4c c2       	rjmp	.+1176   	; 0x4ca <__bad_interrupt>
+  32:	4b c2       	rjmp	.+1174   	; 0x4ca <__bad_interrupt>
+
+00000034 <__trampolines_end>:
+  34:	3a 04       	cpc	r3, r10
+  36:	69 03       	fmul	r22, r17
+  38:	d8 01       	movw	r26, r16
+  3a:	d7 00       	.word	0x00d7	; ????
+  3c:	3e 00       	.word	0x003e	; ????
+
+0000003e <toshibaCode>:
+  3e:	6a 9c 03 d0 01 3a 00 39 00 3a 00 39 00 3a 00 39     j....:.9.:.9.:.9
+  4e:	00 3a 00 39 00 3a 00 39 00 3a 00 39 00 3a 00 ad     .:.9.:.9.:.9.:..
+  5e:	00 3a 00 39 00 3a 00 ad 00 3a 00 ad 00 3a 00 ad     .:.9.:...:...:..
+  6e:	00 3a 00 ad 00 3a 00 ad 00 3a 00 ad 00 3a 00 39     .:...:...:...:.9
+  7e:	00 3a 00 ad 00 3a 00 39 00 3a 00 ad 00 3a 00 39     .:...:.9.:...:.9
+  8e:	00 3a 00 39 00 3a 00 ad 00 3a 00 39 00 3a 00 39     .:.9.:...:.9.:.9
+  9e:	00 3a 00 39 00 3a 00 ad 00 3a 00 39 00 3a 00 ad     .:.9.:...:.9.:..
+  ae:	00 3a 00 ad 00 3a 00 39 00 3a 00 ad 00 3a 00 ad     .:...:.9.:...:..
+  be:	00 3a 00 ad 00 3a 00 d6 0f 9e 03 e6 00 3a 00 98     .:...:.......:..
+  ce:	26 9e 03 e6 00 3a 00 00 00                          &....:...
+
+000000d7 <sharpCode>:
+  d7:	6a 1c 00 bd 00 1d 00 51 00 1d 00 51 00 1d 00 51     j......Q...Q...Q
+  e7:	00 1d 00 51 00 1d 00 51 00 1d 00 bd 00 1d 00 bd     ...Q...Q........
+  f7:	00 1d 00 51 00 1d 00 bd 00 1d 00 51 00 1d 00 51     ...Q.......Q...Q
+ 107:	00 1d 00 51 00 1d 00 bd 00 1d 00 51 00 1d 00 3e     ...Q.......Q...>
+ 117:	12 1d 00 bd 00 1d 00 51 00 1d 00 51 00 1d 00 51     .......Q...Q...Q
+ 127:	00 1d 00 51 00 1d 00 bd 00 1d 00 51 00 1d 00 51     ...Q.......Q...Q
+ 137:	00 1d 00 bd 00 1d 00 51 00 1d 00 bd 00 1d 00 bd     .......Q........
+ 147:	00 1d 00 bd 00 1d 00 51 00 1d 00 bd 00 1d 00 3e     .......Q.......>
+ 157:	12 1d 00 bd 00 1d 00 51 00 1d 00 51 00 1d 00 51     .......Q...Q...Q
+ 167:	00 1d 00 51 00 1d 00 51 00 1d 00 bd 00 1d 00 bd     ...Q...Q........
+ 177:	00 1d 00 51 00 1d 00 bd 00 1d 00 51 00 1d 00 51     ...Q.......Q...Q
+ 187:	00 1d 00 51 00 1d 00 bd 00 1d 00 51 00 1d 00 3e     ...Q.......Q...>
+ 197:	12 1d 00 bd 00 1d 00 51 00 1d 00 51 00 1d 00 51     .......Q...Q...Q
+ 1a7:	00 1d 00 51 00 1d 00 bd 00 1d 00 51 00 1d 00 51     ...Q.......Q...Q
+ 1b7:	00 1d 00 bd 00 1d 00 51 00 1d 00 bd 00 1d 00 bd     .......Q........
+ 1c7:	00 1d 00 bd 00 1d 00 51 00 1d 00 bd 00 1d 00 00     .......Q........
+	...
+
+000001d8 <panasonicCode>:
+ 1d8:	6e 66 01 b3 00 2c 00 2d 00 2c 00 87 00 2c 00 2d     nf...,.-.,...,.-
+ 1e8:	00 2c 00 2d 00 2c 00 2d 00 2c 00 2d 00 2c 00 2d     .,.-.,.-.,.-.,.-
+ 1f8:	00 2c 00 2d 00 2c 00 2d 00 2c 00 2d 00 2c 00 2d     .,.-.,.-.,.-.,.-
+ 208:	00 2c 00 2d 00 2c 00 2d 00 2c 00 87 00 2c 00 2d     .,.-.,.-.,...,.-
+ 218:	00 2c 00 2d 00 2c 00 2d 00 2c 00 2d 00 2c 00 2d     .,.-.,.-.,.-.,.-
+ 228:	00 2c 00 2d 00 2c 00 2d 00 2c 00 2d 00 2c 00 2d     .,.-.,.-.,.-.,.-
+ 238:	00 2c 00 87 00 2c 00 2d 00 2c 00 2d 00 2c 00 2d     .,...,.-.,.-.,.-
+ 248:	00 2c 00 2d 00 2c 00 2d 00 2c 00 2d 00 2c 00 2d     .,.-.,.-.,.-.,.-
+ 258:	00 2c 00 2d 00 2c 00 87 00 2c 00 2d 00 2c 00 87     .,.-.,...,.-.,..
+ 268:	00 2c 00 87 00 2c 00 87 00 2c 00 87 00 2c 00 2d     .,...,...,...,.-
+ 278:	00 2c 00 2d 00 2c 00 87 00 2c 00 2d 00 2c 00 87     .,.-.,...,.-.,..
+ 288:	00 2c 00 87 00 2c 00 87 00 2c 00 87 00 2c 00 2d     .,...,...,...,.-
+ 298:	00 2c 00 87 00 2c 00 28 1e 66 01 b4 00 2c 00 2d     .,...,.(.f...,.-
+ 2a8:	00 2c 00 87 00 2c 00 2d 00 2c 00 2d 00 2c 00 2d     .,...,.-.,.-.,.-
+ 2b8:	00 2c 00 2d 00 2c 00 2d 00 2c 00 2d 00 2c 00 2d     .,.-.,.-.,.-.,.-
+ 2c8:	00 2c 00 2d 00 2c 00 2d 00 2c 00 2d 00 2c 00 2d     .,.-.,.-.,.-.,.-
+ 2d8:	00 2c 00 87 00 2c 00 2d 00 2c 00 2d 00 2c 00 2d     .,...,.-.,.-.,.-
+ 2e8:	00 2c 00 2d 00 2c 00 2d 00 2c 00 2d 00 2c 00 2d     .,.-.,.-.,.-.,.-
+ 2f8:	00 2c 00 2d 00 2c 00 2d 00 2c 00 87 00 2c 00 2d     .,.-.,.-.,...,.-
+ 308:	00 2c 00 2d 00 2c 00 2d 00 2c 00 2d 00 2c 00 2d     .,.-.,.-.,.-.,.-
+ 318:	00 2c 00 2d 00 2c 00 2d 00 2c 00 2d 00 2c 00 87     .,.-.,.-.,.-.,..
+ 328:	00 2c 00 2d 00 2c 00 87 00 2c 00 87 00 2c 00 87     .,.-.,...,...,..
+ 338:	00 2c 00 87 00 2c 00 2d 00 2c 00 2d 00 2c 00 87     .,...,.-.,.-.,..
+ 348:	00 2c 00 2d 00 2c 00 87 00 2c 00 87 00 2c 00 87     .,.-.,...,...,..
+ 358:	00 2c 00 87 00 2c 00 2d 00 2c 00 87 00 2c 00 00     .,...,.-.,...,..
+	...
+
+00000369 <rcaCode>:
+ 369:	47 9b 01 9a 01 34 00 cd 00 34 00 cd 00 34 00 cd     G....4...4...4..
+ 379:	00 34 00 cd 00 34 00 66 00 34 00 66 00 34 00 cd     .4...4.f.4.f.4..
+ 389:	00 34 00 66 00 34 00 cd 00 34 00 66 00 34 00 cd     .4.f.4...4.f.4..
+ 399:	00 34 00 66 00 34 00 66 00 34 00 66 00 34 00 66     .4.f.4.f.4.f.4.f
+ 3a9:	00 34 00 66 00 34 00 cd 00 34 00 cd 00 34 00 66     .4.f.4...4...4.f
+ 3b9:	00 34 00 cd 00 34 00 66 00 34 00 cd 00 34 00 66     .4...4.f.4...4.f
+ 3c9:	00 34 00 cd 00 34 00 35 03 9b 01 9a 01 34 00 cd     .4...4.5.....4..
+ 3d9:	00 34 00 cd 00 34 00 cd 00 34 00 cd 00 34 00 66     .4...4...4...4.f
+ 3e9:	00 34 00 66 00 34 00 cd 00 34 00 66 00 34 00 cd     .4.f.4...4.f.4..
+ 3f9:	00 34 00 66 00 34 00 cd 00 34 00 66 00 34 00 66     .4.f.4...4.f.4.f
+ 409:	00 34 00 66 00 34 00 66 00 34 00 66 00 34 00 cd     .4.f.4.f.4.f.4..
+ 419:	00 34 00 cd 00 34 00 66 00 34 00 cd 00 34 00 66     .4...4.f.4...4.f
+ 429:	00 34 00 cd 00 34 00 66 00 34 00 cd 00 34 00 00     .4...4.f.4...4..
+	...
+
+0000043a <sonyCode>:
+ 43a:	6a f5 00 3c 00 7b 00 3c 00 3d 00 3c 00 7b 00 3c     j..<.{.<.=.<.{.<
+ 44a:	00 3d 00 3c 00 7b 00 3c 00 3d 00 3c 00 3d 00 3c     .=.<.{.<.=.<.=.<
+ 45a:	00 7b 00 3c 00 3d 00 3c 00 3d 00 3c 00 3d 00 3c     .{.<.=.<.=.<.=.<
+ 46a:	00 3d 00 c7 0a f5 00 3c 00 7b 00 3c 00 3d 00 3c     .=.....<.{.<.=.<
+ 47a:	00 7b 00 3c 00 3d 00 3c 00 7b 00 3c 00 3d 00 3c     .{.<.=.<.{.<.=.<
+ 48a:	00 3d 00 3c 00 7b 00 3c 00 3d 00 3c 00 3d 00 3c     .=.<.{.<.=.<.=.<
+ 49a:	00 3d 00 3c 00 3d 00 00 00 00                       .=.<.=....
+
+000004a4 <__ctors_end>:
+ 4a4:	11 24       	eor	r1, r1
+ 4a6:	1f be       	out	0x3f, r1	; 63
+ 4a8:	cf ef       	ldi	r28, 0xFF	; 255
+ 4aa:	cd bf       	out	0x3d, r28	; 61
+ 4ac:	df e3       	ldi	r29, 0x3F	; 63
+ 4ae:	de bf       	out	0x3e, r29	; 62
+
+000004b0 <__do_copy_data>:
+ 4b0:	1f e3       	ldi	r17, 0x3F	; 63
+ 4b2:	a0 e8       	ldi	r26, 0x80	; 128
+ 4b4:	bf e3       	ldi	r27, 0x3F	; 63
+ 4b6:	e0 e6       	ldi	r30, 0x60	; 96
+ 4b8:	f6 e0       	ldi	r31, 0x06	; 6
+ 4ba:	02 c0       	rjmp	.+4      	; 0x4c0 <__do_copy_data+0x10>
+ 4bc:	05 90       	lpm	r0, Z+
+ 4be:	0d 92       	st	X+, r0
+ 4c0:	a2 38       	cpi	r26, 0x82	; 130
+ 4c2:	b1 07       	cpc	r27, r17
+ 4c4:	d9 f7       	brne	.-10     	; 0x4bc <__do_copy_data+0xc>
+ 4c6:	66 d0       	rcall	.+204    	; 0x594 <main>
+ 4c8:	c9 c0       	rjmp	.+402    	; 0x65c <_exit>
+
+000004ca <__bad_interrupt>:
+ 4ca:	9a cd       	rjmp	.-1228   	; 0x0 <__vectors>
+
+000004cc <SYSCLK_init>:
+	_delay_ms(500);					 // 500 millisec delay
+	PORTA.OUTSET = LED_PIN;          // turn off visible LED at PB0 by pulling pin to +3V
+	_delay_ms(500);	
+	PORTA.OUTCLR = LED_PIN;  
+	_delay_ms(500);	
+	PORTA.OUTSET = LED_PIN; 		
+ 4cc:	88 ed       	ldi	r24, 0xD8	; 216
+ 4ce:	90 e0       	ldi	r25, 0x00	; 0
+ 4d0:	84 bf       	out	0x34, r24	; 52
+ 4d2:	90 93 60 00 	sts	0x0060, r25	; 0x800060 <__RODATA_PM_OFFSET__+0x7f8060>
+ 4d6:	21 e0       	ldi	r18, 0x01	; 1
+ 4d8:	30 e0       	ldi	r19, 0x00	; 0
+ 4da:	84 bf       	out	0x34, r24	; 52
+ 4dc:	20 93 61 00 	sts	0x0061, r18	; 0x800061 <__RODATA_PM_OFFSET__+0x7f8061>
+ 4e0:	08 95       	ret
+
+000004e2 <PIN_init>:
+ 4e2:	e0 e0       	ldi	r30, 0x00	; 0
+ 4e4:	f4 e0       	ldi	r31, 0x04	; 4
+ 4e6:	80 81       	ld	r24, Z
+ 4e8:	88 60       	ori	r24, 0x08	; 8
+ 4ea:	80 83       	st	Z, r24
+ 4ec:	80 81       	ld	r24, Z
+ 4ee:	86 6c       	ori	r24, 0xC6	; 198
+ 4f0:	80 83       	st	Z, r24
+ 4f2:	08 95       	ret
+
+000004f4 <delay_ten_us>:
+ 4f4:	9c 01       	movw	r18, r24
+ 4f6:	10 c0       	rjmp	.+32     	; 0x518 <delay_ten_us+0x24>
+ 4f8:	00 00       	nop
+ 4fa:	00 00       	nop
+ 4fc:	9f 5f       	subi	r25, 0xFF	; 255
+ 4fe:	01 c0       	rjmp	.+2      	; 0x502 <delay_ten_us+0xe>
+ 500:	90 e0       	ldi	r25, 0x00	; 0
+ 502:	98 30       	cpi	r25, 0x08	; 8
+ 504:	c8 f3       	brcs	.-14     	; 0x4f8 <delay_ten_us+0x4>
+	...
+ 512:	00 00       	nop
+ 514:	21 50       	subi	r18, 0x01	; 1
+ 516:	31 09       	sbc	r19, r1
+ 518:	21 15       	cp	r18, r1
+ 51a:	31 05       	cpc	r19, r1
+ 51c:	89 f7       	brne	.-30     	; 0x500 <delay_ten_us+0xc>
+ 51e:	08 95       	ret
+
+00000520 <quickflashLED>:
+ 520:	1f 93       	push	r17
+ 522:	cf 93       	push	r28
+ 524:	df 93       	push	r29
+ 526:	c0 e0       	ldi	r28, 0x00	; 0
+ 528:	d4 e0       	ldi	r29, 0x04	; 4
+ 52a:	14 e0       	ldi	r17, 0x04	; 4
+ 52c:	1e 83       	std	Y+6, r17	; 0x06
+ 52e:	88 eb       	ldi	r24, 0xB8	; 184
+ 530:	9b e0       	ldi	r25, 0x0B	; 11
+ 532:	e0 df       	rcall	.-64     	; 0x4f4 <delay_ten_us>
+ 534:	1d 83       	std	Y+5, r17	; 0x05
+ 536:	df 91       	pop	r29
+ 538:	cf 91       	pop	r28
+ 53a:	1f 91       	pop	r17
+ 53c:	08 95       	ret
+
+0000053e <quickflashLED4x>:
+}
+// This function quickly pulses the visible LED (connected to PB0, pin 5) 4 times
+void quickflashLED4x( void ) {
+	quickflashLED();
+ 53e:	f0 df       	rcall	.-32     	; 0x520 <quickflashLED>
+	delay_ten_us(15000);        // 150 millisec delay
+ 540:	88 e9       	ldi	r24, 0x98	; 152
+ 542:	9a e3       	ldi	r25, 0x3A	; 58
+ 544:	d7 df       	rcall	.-82     	; 0x4f4 <delay_ten_us>
+	quickflashLED();
+ 546:	ec df       	rcall	.-40     	; 0x520 <quickflashLED>
+	delay_ten_us(15000);        // 150 millisec delay
+ 548:	88 e9       	ldi	r24, 0x98	; 152
+ 54a:	9a e3       	ldi	r25, 0x3A	; 58
+ 54c:	d3 df       	rcall	.-90     	; 0x4f4 <delay_ten_us>
+	quickflashLED();
+ 54e:	e8 df       	rcall	.-48     	; 0x520 <quickflashLED>
+	delay_ten_us(15000);        // 150 millisec delay
+ 550:	88 e9       	ldi	r24, 0x98	; 152
+ 552:	9a e3       	ldi	r25, 0x3A	; 58
+ 554:	cf df       	rcall	.-98     	; 0x4f4 <delay_ten_us>
+	quickflashLED();
+ 556:	e4 df       	rcall	.-56     	; 0x520 <quickflashLED>
+ 558:	08 95       	ret
+
+0000055a <xmitCodeElement>:
+// This function transmits one Code Element of a POWER code to the IR emitter,
+//   given offTime and onTime for the codeElement
+//     If offTime = 0 that signifies the last Code Element of the POWER code
+//     and the delay_ten_us function will have no delay for offTime
+//     (but we'll delay for 250 milliseconds in the main function)
+void xmitCodeElement(uint16_t ontime, uint16_t offtime ) {
+ 55a:	0f 93       	push	r16
+ 55c:	1f 93       	push	r17
+ 55e:	cf 93       	push	r28
+ 560:	df 93       	push	r29
+ 562:	8b 01       	movw	r16, r22
+	TCA0.CNT = 0; // reset the timers so they are aligned
+	TCB0.CNT = 0;
+	*/
+	// start Timer1 outputting the carrier frequency to IR emitters on CMP0 WO0 (PA3, pin 7)
+	/* set waveform output on PORT A */
+	TCA0.SINGLE.CTRLB = TCA_SINGLE_CMP0EN_bm // enable compare channel 0
+ 564:	c0 e0       	ldi	r28, 0x00	; 0
+ 566:	da e0       	ldi	r29, 0x0A	; 10
+ 568:	21 e1       	ldi	r18, 0x11	; 17
+ 56a:	29 83       	std	Y+1, r18	; 0x01
+	| TCA_SINGLE_WGMODE_FRQ_gc;	// set Frequency mode
+	/* disable event counting */
+	TCA0.SINGLE.EVCTRL &= ~(TCA_SINGLE_CNTEI_bm);
+ 56c:	29 85       	ldd	r18, Y+9	; 0x09
+ 56e:	2e 7f       	andi	r18, 0xFE	; 254
+ 570:	29 87       	std	Y+9, r18	; 0x09
+	/* set frequency in FRQ mode */
+	//	TCA0.SINGLE.CMP0 = PERIOD_EXAMPLE_VALUE;   //the period time (FRQ) already set in main()
+	/* set clock source (sys_clk/div_value) */
+	TCA0.SINGLE.CTRLA = TCA_SINGLE_CLKSEL_DIV1_gc   // set clock source (sys_clk/1)
+ 572:	21 e0       	ldi	r18, 0x01	; 1
+ 574:	28 83       	st	Y, r18
+	| TCA_SINGLE_ENABLE_bm; /* and start timer */
+	// keep transmitting carrier for onTime
+	delay_ten_us(ontime);
+ 576:	be df       	rcall	.-132    	; 0x4f4 <delay_ten_us>
+	//for debug continue emitting test
+	// while(1);
+	
+	// turn off output to IR emitters on 0C1A (PB1, pin 6) for offTime
+	TCA0.SINGLE.CTRLA &= ~(TCA_SINGLE_ENABLE_bm); /* stop timer to set bit "0" */
+ 578:	88 81       	ld	r24, Y
+ 57a:	8e 7f       	andi	r24, 0xFE	; 254
+ 57c:	88 83       	st	Y, r24
+	TCA0.SINGLE.CTRLB = 0;	// CTRLB register RESET add for forced OUTPUT "L"
+ 57e:	19 82       	std	Y+1, r1	; 0x01
+	PORTA.OUTCLR = IRLED_PIN;  // turn off IR LED
+ 580:	88 e0       	ldi	r24, 0x08	; 8
+ 582:	80 93 06 04 	sts	0x0406, r24	; 0x800406 <__RODATA_PM_OFFSET__+0x7f8406>
+	//  PORTB &= ~_BV(IRLED1) & ~_BV(IRLED2); // turn off IR LED
+
+	delay_ten_us(offtime);
+ 586:	c8 01       	movw	r24, r16
+ 588:	b5 df       	rcall	.-150    	; 0x4f4 <delay_ten_us>
+}
+ 58a:	df 91       	pop	r29
+ 58c:	cf 91       	pop	r28
+ 58e:	1f 91       	pop	r17
+ 590:	0f 91       	pop	r16
+ 592:	08 95       	ret
+
+00000594 <main>:
+//extern const struct powercode powerCodes[] PROGMEM;
+// extern const PGM_P *powerCodes[] PROGMEM;
+extern const struct powercode *const powerCodes[] PROGMEM; // Changed by Y.M. to avoid error
+extern uint8_t num_codes;
+
+int main(void) {
+ 594:	ef 92       	push	r14
+ 596:	ff 92       	push	r15
+ 598:	0f 93       	push	r16
+ 59a:	1f 93       	push	r17
+ 59c:	cf 93       	push	r28
+ 59e:	df 93       	push	r29
+	SYSCLK_init();
+ 5a0:	95 df       	rcall	.-214    	; 0x4cc <SYSCLK_init>
+	PIN_init();
+ 5a2:	9f df       	rcall	.-194    	; 0x4e2 <PIN_init>
+	// For debug
+//	PORTA.OUTSET = LED_PIN;  //  visible LED is off when pin is high
+//	flashLED();  // LED Blink for debug
+
+	// Sleep mode setting and enable
+	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+ 5a4:	e0 e5       	ldi	r30, 0x50	; 80
+ 5a6:	f0 e0       	ldi	r31, 0x00	; 0
+ 5a8:	80 81       	ld	r24, Z
+ 5aa:	89 7f       	andi	r24, 0xF9	; 249
+ 5ac:	84 60       	ori	r24, 0x04	; 4
+ 5ae:	80 83       	st	Z, r24
+	sleep_enable();
+ 5b0:	80 81       	ld	r24, Z
+ 5b2:	81 60       	ori	r24, 0x01	; 1
+ 5b4:	80 83       	st	Z, r24
+
+	for (i=0; i<num_codes; i++) {   // for every POWER code in our collection
+ 5b6:	00 e0       	ldi	r16, 0x00	; 0
+ 5b8:	30 c0       	rjmp	.+96     	; 0x61a <main+0x86>
+		quickflashLED(); // visible indication that a code is being output
+ 5ba:	b2 df       	rcall	.-156    	; 0x520 <quickflashLED>
+		//    PGM_P thecode_p = pgm_read_word(powerCodes+i);     // point to next POWER code
+		PGM_P thecode_p = (PGM_P)pgm_read_word(powerCodes+i);     // cast added by Y.M. to avoid error
+ 5bc:	e0 2f       	mov	r30, r16
+ 5be:	f0 e0       	ldi	r31, 0x00	; 0
+ 5c0:	ee 0f       	add	r30, r30
+ 5c2:	ff 1f       	adc	r31, r31
+ 5c4:	ec 5c       	subi	r30, 0xCC	; 204
+ 5c6:	ff 4f       	sbci	r31, 0xFF	; 255
+ 5c8:	85 91       	lpm	r24, Z+
+ 5ca:	94 91       	lpm	r25, Z
+ 5cc:	ec 01       	movw	r28, r24
+		uint8_t freq = pgm_read_byte(thecode_p);
+ 5ce:	fc 01       	movw	r30, r24
+ 5d0:	84 91       	lpm	r24, Z
+		// set TCA0 for Timer1 to output this POWER code's carrier frequency
+		//OCR0A = OCR1C = freq;
+		TCA0.SINGLE.CMP0 = freq;
+ 5d2:	90 e0       	ldi	r25, 0x00	; 0
+ 5d4:	80 93 28 0a 	sts	0x0A28, r24	; 0x800a28 <__RODATA_PM_OFFSET__+0x7f8a28>
+ 5d8:	90 93 29 0a 	sts	0x0A29, r25	; 0x800a29 <__RODATA_PM_OFFSET__+0x7f8a29>
+		
+		// transmit all codeElements for this POWER code (a codeElement is an onTime and an offTime)
+		// transmitting onTime means pulsing the IR emitters at the carrier frequency for the length of time specified in onTime
+		// transmitting offTime means no output from the IR emitters for the length of time specified in offTime
+		j = 0;  // index into codeElements of this POWER code
+ 5dc:	10 e0       	ldi	r17, 0x00	; 0
+		do {
+			// read the onTime and offTime from the program memory
+			ontime = pgm_read_word(thecode_p+(j*4)+1);
+ 5de:	21 2f       	mov	r18, r17
+ 5e0:	30 e0       	ldi	r19, 0x00	; 0
+ 5e2:	22 0f       	add	r18, r18
+ 5e4:	33 1f       	adc	r19, r19
+ 5e6:	22 0f       	add	r18, r18
+ 5e8:	33 1f       	adc	r19, r19
+ 5ea:	f9 01       	movw	r30, r18
+ 5ec:	31 96       	adiw	r30, 0x01	; 1
+ 5ee:	ec 0f       	add	r30, r28
+ 5f0:	fd 1f       	adc	r31, r29
+ 5f2:	85 91       	lpm	r24, Z+
+ 5f4:	94 91       	lpm	r25, Z
+			offtime = pgm_read_word(thecode_p+(j*4)+3);
+ 5f6:	f9 01       	movw	r30, r18
+ 5f8:	33 96       	adiw	r30, 0x03	; 3
+ 5fa:	ec 0f       	add	r30, r28
+ 5fc:	fd 1f       	adc	r31, r29
+ 5fe:	e5 90       	lpm	r14, Z+
+ 600:	f4 90       	lpm	r15, Z
+
+			xmitCodeElement(ontime, offtime);  // transmit this codeElement (ontime and offtime)
+ 602:	b7 01       	movw	r22, r14
+ 604:	aa df       	rcall	.-172    	; 0x55a <xmitCodeElement>
+			j++;        // turn off IR LED
+ 606:	1f 5f       	subi	r17, 0xFF	; 255
+		} while ( offtime != 0 );  // offTime = 0 signifies last codeElement for a POWER code
+ 608:	ef 28       	or	r14, r15
+ 60a:	49 f7       	brne	.-46     	; 0x5de <main+0x4a>
+
+		PORTA.OUTCLR = IRLED_PIN ;           // turn off IR LED
+ 60c:	88 e0       	ldi	r24, 0x08	; 8
+ 60e:	80 93 06 04 	sts	0x0406, r24	; 0x800406 <__RODATA_PM_OFFSET__+0x7f8406>
+
+		// delay 250 milliseconds before transmitting next POWER code
+		delay_ten_us(25000);
+ 612:	88 ea       	ldi	r24, 0xA8	; 168
+ 614:	91 e6       	ldi	r25, 0x61	; 97
+ 616:	6e df       	rcall	.-292    	; 0x4f4 <delay_ten_us>
+
+	// Sleep mode setting and enable
+	set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+	sleep_enable();
+
+	for (i=0; i<num_codes; i++) {   // for every POWER code in our collection
+ 618:	0f 5f       	subi	r16, 0xFF	; 255
+ 61a:	80 91 80 3f 	lds	r24, 0x3F80	; 0x803f80 <__DATA_REGION_ORIGIN__>
+ 61e:	08 17       	cp	r16, r24
+ 620:	08 f4       	brcc	.+2      	; 0x624 <main+0x90>
+ 622:	cb cf       	rjmp	.-106    	; 0x5ba <main+0x26>
+		// delay 250 milliseconds before transmitting next POWER code
+		delay_ten_us(25000);
+	}
+	
+	// flash the visible LED on PB0  4 times to indicate that we're done
+	delay_ten_us(65500); // wait maxtime
+ 624:	8c ed       	ldi	r24, 0xDC	; 220
+ 626:	9f ef       	ldi	r25, 0xFF	; 255
+ 628:	65 df       	rcall	.-310    	; 0x4f4 <delay_ten_us>
+	quickflashLED4x();
+ 62a:	89 df       	rcall	.-238    	; 0x53e <quickflashLED4x>
+
+	// Shut down everything and put the CPU to sleep
+	TCA0.SINGLE.CTRLA &= ~(TCA_SINGLE_ENABLE_bm); /* stop timer to set bit "0" */
+ 62c:	e0 e0       	ldi	r30, 0x00	; 0
+ 62e:	fa e0       	ldi	r31, 0x0A	; 10
+ 630:	80 81       	ld	r24, Z
+ 632:	8e 7f       	andi	r24, 0xFE	; 254
+ 634:	80 83       	st	Z, r24
+	PORTA.OUTSET = LED_PIN; // turn on the button pullup, turn off visible LED
+ 636:	e0 e0       	ldi	r30, 0x00	; 0
+ 638:	f4 e0       	ldi	r31, 0x04	; 4
+ 63a:	84 e0       	ldi	r24, 0x04	; 4
+ 63c:	85 83       	std	Z+5, r24	; 0x05
+	PORTA.OUTCLR = IRLED_PIN;        // turn off IR LED
+ 63e:	88 e0       	ldi	r24, 0x08	; 8
+ 640:	86 83       	std	Z+6, r24	; 0x06
+	delay_ten_us(1000);             // wait 10 millisec second
+ 642:	88 ee       	ldi	r24, 0xE8	; 232
+ 644:	93 e0       	ldi	r25, 0x03	; 3
+ 646:	56 df       	rcall	.-340    	; 0x4f4 <delay_ten_us>
+	
+	sleep_cpu();                    // put CPU into Power Down Sleep Mode
+ 648:	88 95       	sleep
+}
+ 64a:	80 e0       	ldi	r24, 0x00	; 0
+ 64c:	90 e0       	ldi	r25, 0x00	; 0
+ 64e:	df 91       	pop	r29
+ 650:	cf 91       	pop	r28
+ 652:	1f 91       	pop	r17
+ 654:	0f 91       	pop	r16
+ 656:	ff 90       	pop	r15
+ 658:	ef 90       	pop	r14
+ 65a:	08 95       	ret
+
+0000065c <_exit>:
+ 65c:	f8 94       	cli
+
+0000065e <__stop_program>:
+ 65e:	ff cf       	rjmp	.-2      	; 0x65e <__stop_program>

@@ -1,0 +1,604 @@
+
+TINY202_IR_REMOTE_ISR1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00803f80  00803f80  00000508  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000494  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000002  00803f80  00803f80  00000508  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000508  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000538  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000070  00000000  00000000  00000574  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000021b4  00000000  00000000  000005e4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000013ac  00000000  00000000  00002798  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000054e  00000000  00000000  00003b44  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000000cc  00000000  00000000  00004094  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000010ad  00000000  00000000  00004160  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000002a2  00000000  00000000  0000520d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000048  00000000  00000000  000054af  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	1a c1       	rjmp	.+564    	; 0x236 <__ctors_end>
+   2:	34 c1       	rjmp	.+616    	; 0x26c <__bad_interrupt>
+   4:	33 c1       	rjmp	.+614    	; 0x26c <__bad_interrupt>
+   6:	9f c1       	rjmp	.+830    	; 0x346 <__vector_3>
+   8:	31 c1       	rjmp	.+610    	; 0x26c <__bad_interrupt>
+   a:	30 c1       	rjmp	.+608    	; 0x26c <__bad_interrupt>
+   c:	2f c1       	rjmp	.+606    	; 0x26c <__bad_interrupt>
+   e:	2e c1       	rjmp	.+604    	; 0x26c <__bad_interrupt>
+  10:	2d c1       	rjmp	.+602    	; 0x26c <__bad_interrupt>
+  12:	2c c1       	rjmp	.+600    	; 0x26c <__bad_interrupt>
+  14:	2b c1       	rjmp	.+598    	; 0x26c <__bad_interrupt>
+  16:	2a c1       	rjmp	.+596    	; 0x26c <__bad_interrupt>
+  18:	29 c1       	rjmp	.+594    	; 0x26c <__bad_interrupt>
+  1a:	28 c1       	rjmp	.+592    	; 0x26c <__bad_interrupt>
+  1c:	27 c1       	rjmp	.+590    	; 0x26c <__bad_interrupt>
+  1e:	26 c1       	rjmp	.+588    	; 0x26c <__bad_interrupt>
+  20:	25 c1       	rjmp	.+586    	; 0x26c <__bad_interrupt>
+  22:	24 c1       	rjmp	.+584    	; 0x26c <__bad_interrupt>
+  24:	23 c1       	rjmp	.+582    	; 0x26c <__bad_interrupt>
+  26:	22 c1       	rjmp	.+580    	; 0x26c <__bad_interrupt>
+  28:	21 c1       	rjmp	.+578    	; 0x26c <__bad_interrupt>
+  2a:	20 c1       	rjmp	.+576    	; 0x26c <__bad_interrupt>
+  2c:	1f c1       	rjmp	.+574    	; 0x26c <__bad_interrupt>
+  2e:	1e c1       	rjmp	.+572    	; 0x26c <__bad_interrupt>
+  30:	1d c1       	rjmp	.+570    	; 0x26c <__bad_interrupt>
+  32:	1c c1       	rjmp	.+568    	; 0x26c <__bad_interrupt>
+
+00000034 <__trampolines_end>:
+  34:	8c 01       	movw	r16, r24
+  36:	e3 00       	.word	0x00e3	; ????
+  38:	3a 00       	.word	0x003a	; ????
+
+0000003a <downCode>:
+  3a:	6d 74 01 bf 00 2e 00 2e 00 2e 00 2e 00 2e 00 88     mt..............
+  4a:	00 2e 00 88 00 2e 00 2e 00 2e 00 88 00 2e 00 2e     ................
+  5a:	00 2e 00 2e 00 2e 00 2e 00 2e 00 88 00 2e 00 2e     ................
+  6a:	00 2e 00 2e 00 2e 00 88 00 2e 00 2e 00 2e 00 88     ................
+  7a:	00 2e 00 2e 00 2e 00 88 00 2e 00 2e 00 2e 00 2e     ................
+  8a:	00 2e 00 88 00 2e 00 2e 00 2e 00 2e 00 2e 00 2e     ................
+  9a:	00 2e 00 2e 00 2e 00 88 00 2e 00 88 00 2e 00 2e     ................
+  aa:	00 2e 00 88 00 2e 00 2e 00 2e 00 88 00 2e 00 2e     ................
+  ba:	00 2e 00 2e 00 2e 00 2e 00 2e 00 88 00 2e 00 2e     ................
+  ca:	00 2e 00 2e 00 2e 00 2e 00 2e 00 88 00 2e 00 2e     ................
+  da:	00 2e 00 2e 00 2e 00 00 00                          .........
+
+000000e3 <upCode>:
+  e3:	6d 74 01 bf 00 2e 00 2e 00 2e 00 2e 00 2e 00 88     mt..............
+  f3:	00 2e 00 88 00 2e 00 2e 00 2e 00 88 00 2e 00 2e     ................
+ 103:	00 2e 00 2e 00 2e 00 2e 00 2e 00 88 00 2e 00 2e     ................
+ 113:	00 2e 00 2e 00 2e 00 88 00 2e 00 2e 00 2e 00 88     ................
+ 123:	00 2e 00 2e 00 2e 00 88 00 2e 00 2e 00 2e 00 2e     ................
+ 133:	00 2e 00 88 00 2e 00 2e 00 2e 00 2e 00 2e 00 2e     ................
+ 143:	00 2e 00 2e 00 2e 00 2e 00 2e 00 88 00 2e 00 2e     ................
+ 153:	00 2e 00 88 00 2e 00 2e 00 2e 00 88 00 2e 00 2e     ................
+ 163:	00 2e 00 2e 00 2e 00 88 00 2e 00 88 00 2e 00 2e     ................
+ 173:	00 2e 00 2e 00 2e 00 2e 00 2e 00 88 00 2e 00 2e     ................
+ 183:	00 2e 00 2e 00 2e 00 00 00                          .........
+
+0000018c <modeCode>:
+ 18c:	6d 74 01 bf 00 2e 00 2e 00 2e 00 2e 00 2e 00 88     mt..............
+ 19c:	00 2e 00 88 00 2e 00 2e 00 2e 00 88 00 2e 00 2e     ................
+ 1ac:	00 2e 00 2e 00 2e 00 2e 00 2e 00 88 00 2e 00 2e     ................
+ 1bc:	00 2e 00 2e 00 2e 00 88 00 2e 00 2e 00 2e 00 88     ................
+ 1cc:	00 2e 00 2e 00 2e 00 88 00 2e 00 2e 00 2e 00 2e     ................
+ 1dc:	00 2e 00 88 00 2e 00 2e 00 2e 00 2e 00 2e 00 2e     ................
+ 1ec:	00 2e 00 2e 00 2e 00 2e 00 2e 00 2e 00 2e 00 2e     ................
+ 1fc:	00 2e 00 88 00 2e 00 2e 00 2e 00 88 00 2e 00 2e     ................
+ 20c:	00 2e 00 2e 00 2e 00 88 00 2e 00 2e 00 2e 00 2e     ................
+ 21c:	00 2e 00 2e 00 2e 00 2e 00 2e 00 88 00 2e 00 2e     ................
+ 22c:	00 2e 00 2e 00 2e 00 00 00 00                       ..........
+
+00000236 <__ctors_end>:
+ 236:	11 24       	eor	r1, r1
+ 238:	1f be       	out	0x3f, r1	; 63
+ 23a:	cf ef       	ldi	r28, 0xFF	; 255
+ 23c:	cd bf       	out	0x3d, r28	; 61
+ 23e:	df e3       	ldi	r29, 0x3F	; 63
+ 240:	de bf       	out	0x3e, r29	; 62
+
+00000242 <__do_copy_data>:
+ 242:	1f e3       	ldi	r17, 0x3F	; 63
+ 244:	a0 e8       	ldi	r26, 0x80	; 128
+ 246:	bf e3       	ldi	r27, 0x3F	; 63
+ 248:	e4 e9       	ldi	r30, 0x94	; 148
+ 24a:	f4 e0       	ldi	r31, 0x04	; 4
+ 24c:	02 c0       	rjmp	.+4      	; 0x252 <__do_copy_data+0x10>
+ 24e:	05 90       	lpm	r0, Z+
+ 250:	0d 92       	st	X+, r0
+ 252:	a0 38       	cpi	r26, 0x80	; 128
+ 254:	b1 07       	cpc	r27, r17
+ 256:	d9 f7       	brne	.-10     	; 0x24e <__do_copy_data+0xc>
+
+00000258 <__do_clear_bss>:
+ 258:	2f e3       	ldi	r18, 0x3F	; 63
+ 25a:	a0 e8       	ldi	r26, 0x80	; 128
+ 25c:	bf e3       	ldi	r27, 0x3F	; 63
+ 25e:	01 c0       	rjmp	.+2      	; 0x262 <.do_clear_bss_start>
+
+00000260 <.do_clear_bss_loop>:
+ 260:	1d 92       	st	X+, r1
+
+00000262 <.do_clear_bss_start>:
+ 262:	a2 38       	cpi	r26, 0x82	; 130
+ 264:	b2 07       	cpc	r27, r18
+ 266:	e1 f7       	brne	.-8      	; 0x260 <.do_clear_bss_loop>
+ 268:	9e d0       	rcall	.+316    	; 0x3a6 <main>
+ 26a:	12 c1       	rjmp	.+548    	; 0x490 <_exit>
+
+0000026c <__bad_interrupt>:
+ 26c:	c9 ce       	rjmp	.-622    	; 0x0 <__vectors>
+
+0000026e <SYSCLK_init>:
+ */
+
+void SYSCLK_init(void) {
+	// SYSCLK 8MHz (16MHz /2)
+	/* Set the Main clock to internal 16MHz oscillator*/
+	_PROTECTED_WRITE(CLKCTRL.MCLKCTRLA, CLKCTRL_CLKSEL_OSC20M_gc);
+ 26e:	88 ed       	ldi	r24, 0xD8	; 216
+ 270:	90 e0       	ldi	r25, 0x00	; 0
+ 272:	84 bf       	out	0x34, r24	; 52
+ 274:	90 93 60 00 	sts	0x0060, r25	; 0x800060 <__RODATA_PM_OFFSET__+0x7f8060>
+	/* Set the Main clock divider is / 2 and Main clock prescaler enabled. */
+	_PROTECTED_WRITE(CLKCTRL.MCLKCTRLB, CLKCTRL_PDIV_2X_gc | CLKCTRL_PEN_bm); //0x01
+ 278:	21 e0       	ldi	r18, 0x01	; 1
+ 27a:	30 e0       	ldi	r19, 0x00	; 0
+ 27c:	84 bf       	out	0x34, r24	; 52
+ 27e:	20 93 61 00 	sts	0x0061, r18	; 0x800061 <__RODATA_PM_OFFSET__+0x7f8061>
+ 282:	08 95       	ret
+
+00000284 <PIN_init>:
+}
+
+void PIN_init(void) {
+	/* set pin 7 of PA3, pin 5 of PA2 as output */
+	PORTA.DIR |= LED_PIN;  // set pin5 of PA2 as Visible LED OUT
+ 284:	e0 e0       	ldi	r30, 0x00	; 0
+ 286:	f4 e0       	ldi	r31, 0x04	; 4
+ 288:	80 81       	ld	r24, Z
+ 28a:	84 60       	ori	r24, 0x04	; 4
+ 28c:	80 83       	st	Z, r24
+	PORTA.DIR |= IRLED_PIN;  // set pin7 of PA3 as IR LED Default WO0 output on ATtiny202P
+ 28e:	80 81       	ld	r24, Z
+ 290:	88 60       	ori	r24, 0x08	; 8
+ 292:	80 83       	st	Z, r24
+	
+   /* set PA2 and PA3 LED OFF */
+	PORTA.OUTSET = LED_PIN; // Visible LED -> "H" (OFF)
+ 294:	84 e0       	ldi	r24, 0x04	; 4
+ 296:	85 83       	std	Z+5, r24	; 0x05
+	PORTA.OUTCLR = IRLED_PIN; // IR LED -> "L" (OFF)
+ 298:	88 e0       	ldi	r24, 0x08	; 8
+ 29a:	86 83       	std	Z+6, r24	; 0x06
+
+	/* Set all pins except the LED pin to pullups*/
+	PORTA.PIN0CTRL = PORT_PULLUPEN_bm;  // pullup RESET and UPDI pin (probably no meanings)
+ 29c:	80 8b       	std	Z+16, r24	; 0x10
+	PORTA.PIN1CTRL = PORT_PULLUPEN_bm; // pullup SW1 Input and reset ISR also
+ 29e:	81 8b       	std	Z+17, r24	; 0x11
+	PORTA.PIN6CTRL = PORT_PULLUPEN_bm;   // pullup SW2 Input and reset ISR also
+ 2a0:	86 8b       	std	Z+22, r24	; 0x16
+	PORTA.PIN7CTRL = PORT_PULLUPEN_bm;  // pullup SW0 Input and reset ISR also
+ 2a2:	87 8b       	std	Z+23, r24	; 0x17
+ 2a4:	08 95       	ret
+
+000002a6 <delay_ten_us>:
+
+#define NOP __asm__ __volatile__ ("nop")
+// This function delays the specified number of 10 microseconds
+// #define DELAY_CNT 11
+#define DELAY_CNT 7  // adjust timing for ATMEL Studio porting by Y.M.
+void delay_ten_us(uint16_t us) {
+ 2a6:	9c 01       	movw	r18, r24
+	uint8_t timer;
+	while (us != 0) {
+ 2a8:	10 c0       	rjmp	.+32     	; 0x2ca <delay_ten_us+0x24>
+		for (timer=0; timer <= DELAY_CNT; timer++) {
+			 NOP;NOP;
+ 2aa:	00 00       	nop
+ 2ac:	00 00       	nop
+// #define DELAY_CNT 11
+#define DELAY_CNT 7  // adjust timing for ATMEL Studio porting by Y.M.
+void delay_ten_us(uint16_t us) {
+	uint8_t timer;
+	while (us != 0) {
+		for (timer=0; timer <= DELAY_CNT; timer++) {
+ 2ae:	9f 5f       	subi	r25, 0xFF	; 255
+ 2b0:	01 c0       	rjmp	.+2      	; 0x2b4 <delay_ten_us+0xe>
+ 2b2:	90 e0       	ldi	r25, 0x00	; 0
+ 2b4:	98 30       	cpi	r25, 0x08	; 8
+ 2b6:	c8 f3       	brcs	.-14     	; 0x2aa <delay_ten_us+0x4>
+	...
+			 NOP;NOP;
+		}
+		//NOP;
+		NOP;NOP;NOP;NOP;NOP;NOP;NOP;// adjust timing for ATMEL Studio porting
+ 2c4:	00 00       	nop
+		us--;
+ 2c6:	21 50       	subi	r18, 0x01	; 1
+ 2c8:	31 09       	sbc	r19, r1
+// This function delays the specified number of 10 microseconds
+// #define DELAY_CNT 11
+#define DELAY_CNT 7  // adjust timing for ATMEL Studio porting by Y.M.
+void delay_ten_us(uint16_t us) {
+	uint8_t timer;
+	while (us != 0) {
+ 2ca:	21 15       	cp	r18, r1
+ 2cc:	31 05       	cpc	r19, r1
+ 2ce:	89 f7       	brne	.-30     	; 0x2b2 <delay_ten_us+0xc>
+		}
+		//NOP;
+		NOP;NOP;NOP;NOP;NOP;NOP;NOP;// adjust timing for ATMEL Studio porting
+		us--;
+	}
+}
+ 2d0:	08 95       	ret
+
+000002d2 <quickflashLED>:
+
+// This function quickly pulses the visible LED (connected to PB0, pin 5)
+void quickflashLED( void ) {
+ 2d2:	1f 93       	push	r17
+ 2d4:	cf 93       	push	r28
+ 2d6:	df 93       	push	r29
+	// pulse LED on for 30ms
+	PORTA.OUTCLR = LED_PIN;         // turn on visible LED at PB0 by pulling pin to ground
+ 2d8:	c0 e0       	ldi	r28, 0x00	; 0
+ 2da:	d4 e0       	ldi	r29, 0x04	; 4
+ 2dc:	14 e0       	ldi	r17, 0x04	; 4
+ 2de:	1e 83       	std	Y+6, r17	; 0x06
+	delay_ten_us(3000);         // 30 millisec delay
+ 2e0:	88 eb       	ldi	r24, 0xB8	; 184
+ 2e2:	9b e0       	ldi	r25, 0x0B	; 11
+ 2e4:	e0 df       	rcall	.-64     	; 0x2a6 <delay_ten_us>
+	PORTA.OUTSET = LED_PIN;          // turn off visible LED at PB0 by pulling pin to +3V
+ 2e6:	1d 83       	std	Y+5, r17	; 0x05
+}
+ 2e8:	df 91       	pop	r29
+ 2ea:	cf 91       	pop	r28
+ 2ec:	1f 91       	pop	r17
+ 2ee:	08 95       	ret
+
+000002f0 <quickflashLED4x>:
+
+// This function quickly pulses the visible LED (connected to PB0, pin 5) 4 times
+void quickflashLED4x( void ) {
+	quickflashLED();
+ 2f0:	f0 df       	rcall	.-32     	; 0x2d2 <quickflashLED>
+	delay_ten_us(15000);        // 150 millisec delay
+ 2f2:	88 e9       	ldi	r24, 0x98	; 152
+ 2f4:	9a e3       	ldi	r25, 0x3A	; 58
+ 2f6:	d7 df       	rcall	.-82     	; 0x2a6 <delay_ten_us>
+	quickflashLED();
+ 2f8:	ec df       	rcall	.-40     	; 0x2d2 <quickflashLED>
+	delay_ten_us(15000);        // 150 millisec delay
+ 2fa:	88 e9       	ldi	r24, 0x98	; 152
+ 2fc:	9a e3       	ldi	r25, 0x3A	; 58
+ 2fe:	d3 df       	rcall	.-90     	; 0x2a6 <delay_ten_us>
+	quickflashLED();
+ 300:	e8 df       	rcall	.-48     	; 0x2d2 <quickflashLED>
+	delay_ten_us(15000);        // 150 millisec delay
+ 302:	88 e9       	ldi	r24, 0x98	; 152
+ 304:	9a e3       	ldi	r25, 0x3A	; 58
+ 306:	cf df       	rcall	.-98     	; 0x2a6 <delay_ten_us>
+	quickflashLED();
+ 308:	e4 df       	rcall	.-56     	; 0x2d2 <quickflashLED>
+ 30a:	08 95       	ret
+
+0000030c <xmitCodeElement>:
+// This function transmits one Code Element of a POWER code to the IR emitter,
+//   given offTime and onTime for the codeElement
+//     If offTime = 0 that signifies the last Code Element of the POWER code
+//     and the delay_ten_us function will have no delay for offTime
+//     (but we'll delay for 250 milliseconds in the main function)
+void xmitCodeElement(uint16_t ontime, uint16_t offtime ) {
+ 30c:	0f 93       	push	r16
+ 30e:	1f 93       	push	r17
+ 310:	cf 93       	push	r28
+ 312:	df 93       	push	r29
+ 314:	8b 01       	movw	r16, r22
+	// start Timer1 outputting the carrier frequency to IR emitters on CMP0 WO0 (PA3, pin 7)
+	/* set waveform output on PORT A */
+	TCA0.SINGLE.CTRLB = TCA_SINGLE_CMP0EN_bm // enable compare channel 0
+ 316:	c0 e0       	ldi	r28, 0x00	; 0
+ 318:	da e0       	ldi	r29, 0x0A	; 10
+ 31a:	21 e1       	ldi	r18, 0x11	; 17
+ 31c:	29 83       	std	Y+1, r18	; 0x01
+	| TCA_SINGLE_WGMODE_FRQ_gc;	// set Frequency mode
+	/* disable event counting */
+	TCA0.SINGLE.EVCTRL &= ~(TCA_SINGLE_CNTEI_bm);
+ 31e:	29 85       	ldd	r18, Y+9	; 0x09
+ 320:	2e 7f       	andi	r18, 0xFE	; 254
+ 322:	29 87       	std	Y+9, r18	; 0x09
+	/* set frequency in FRQ mode */
+	//	TCA0.SINGLE.CMP0 = PERIOD_EXAMPLE_VALUE;   //the period time (FRQ) already set in main()
+	/* set clock source (sys_clk/div_value) */
+	TCA0.SINGLE.CTRLA = TCA_SINGLE_CLKSEL_DIV1_gc   // set clock source (sys_clk/1)
+ 324:	21 e0       	ldi	r18, 0x01	; 1
+ 326:	28 83       	st	Y, r18
+	| TCA_SINGLE_ENABLE_bm; /* and start timer */
+	// keep transmitting carrier for onTime
+	delay_ten_us(ontime);
+ 328:	be df       	rcall	.-132    	; 0x2a6 <delay_ten_us>
+	//for debug continue emitting test
+	// while(1);
+	
+	// turn off output to IR emitters on 0C1A (PB1, pin 6) for offTime
+	TCA0.SINGLE.CTRLA &= ~(TCA_SINGLE_ENABLE_bm); /* stop timer to set bit "0" */
+ 32a:	88 81       	ld	r24, Y
+ 32c:	8e 7f       	andi	r24, 0xFE	; 254
+ 32e:	88 83       	st	Y, r24
+	TCA0.SINGLE.CTRLB = 0;	// CTRLB register RESET add for forced OUTPUT "L"
+ 330:	19 82       	std	Y+1, r1	; 0x01
+	PORTA.OUTCLR = IRLED_PIN;  // turn off IR LED
+ 332:	88 e0       	ldi	r24, 0x08	; 8
+ 334:	80 93 06 04 	sts	0x0406, r24	; 0x800406 <__RODATA_PM_OFFSET__+0x7f8406>
+
+	delay_ten_us(offtime);
+ 338:	c8 01       	movw	r24, r16
+ 33a:	b5 df       	rcall	.-150    	; 0x2a6 <delay_ten_us>
+}
+ 33c:	df 91       	pop	r29
+ 33e:	cf 91       	pop	r28
+ 340:	1f 91       	pop	r17
+ 342:	0f 91       	pop	r16
+ 344:	08 95       	ret
+
+00000346 <__vector_3>:
+
+// IR Player Global parameter **********************************************
+volatile int Play = 0;
+
+// Pin change interrupt
+ISR (PORTA_PORT_vect) {
+ 346:	1f 92       	push	r1
+ 348:	0f 92       	push	r0
+ 34a:	0f b6       	in	r0, 0x3f	; 63
+ 34c:	0f 92       	push	r0
+ 34e:	11 24       	eor	r1, r1
+ 350:	8f 93       	push	r24
+ 352:	9f 93       	push	r25
+	// pin change detection for each buttons and decide Play #
+	int Buttons = PORTA.IN;
+ 354:	80 91 08 04 	lds	r24, 0x0408	; 0x800408 <__RODATA_PM_OFFSET__+0x7f8408>
+	if ((Buttons & SW0_PIN) == 0) Play = 0;
+ 358:	88 23       	and	r24, r24
+ 35a:	2c f0       	brlt	.+10     	; 0x366 <__vector_3+0x20>
+ 35c:	10 92 80 3f 	sts	0x3F80, r1	; 0x803f80 <__DATA_REGION_ORIGIN__>
+ 360:	10 92 81 3f 	sts	0x3F81, r1	; 0x803f81 <__DATA_REGION_ORIGIN__+0x1>
+ 364:	16 c0       	rjmp	.+44     	; 0x392 <__vector_3+0x4c>
+	else if ((Buttons & SW1_PIN) == 0) Play = 1;
+ 366:	81 fd       	sbrc	r24, 1
+ 368:	07 c0       	rjmp	.+14     	; 0x378 <__vector_3+0x32>
+ 36a:	81 e0       	ldi	r24, 0x01	; 1
+ 36c:	90 e0       	ldi	r25, 0x00	; 0
+ 36e:	80 93 80 3f 	sts	0x3F80, r24	; 0x803f80 <__DATA_REGION_ORIGIN__>
+ 372:	90 93 81 3f 	sts	0x3F81, r25	; 0x803f81 <__DATA_REGION_ORIGIN__+0x1>
+ 376:	0d c0       	rjmp	.+26     	; 0x392 <__vector_3+0x4c>
+	else if ((Buttons & SW2_PIN) == 0) Play = 2;
+ 378:	86 fd       	sbrc	r24, 6
+ 37a:	07 c0       	rjmp	.+14     	; 0x38a <__vector_3+0x44>
+ 37c:	82 e0       	ldi	r24, 0x02	; 2
+ 37e:	90 e0       	ldi	r25, 0x00	; 0
+ 380:	80 93 80 3f 	sts	0x3F80, r24	; 0x803f80 <__DATA_REGION_ORIGIN__>
+ 384:	90 93 81 3f 	sts	0x3F81, r25	; 0x803f81 <__DATA_REGION_ORIGIN__+0x1>
+ 388:	04 c0       	rjmp	.+8      	; 0x392 <__vector_3+0x4c>
+	else Play = 0;
+ 38a:	10 92 80 3f 	sts	0x3F80, r1	; 0x803f80 <__DATA_REGION_ORIGIN__>
+ 38e:	10 92 81 3f 	sts	0x3F81, r1	; 0x803f81 <__DATA_REGION_ORIGIN__+0x1>
+
+	PORTA.INTFLAGS =  PORT_INT1_bm | PORT_INT6_bm | PORT_INT7_bm ;        // Clear PA1,PA6,PA7 interrupt flag
+ 392:	82 ec       	ldi	r24, 0xC2	; 194
+ 394:	80 93 09 04 	sts	0x0409, r24	; 0x800409 <__RODATA_PM_OFFSET__+0x7f8409>
+}
+ 398:	9f 91       	pop	r25
+ 39a:	8f 91       	pop	r24
+ 39c:	0f 90       	pop	r0
+ 39e:	0f be       	out	0x3f, r0	; 63
+ 3a0:	0f 90       	pop	r0
+ 3a2:	1f 90       	pop	r1
+ 3a4:	18 95       	reti
+
+000003a6 <main>:
+
+extern const struct powercode *const irCodes[] PROGMEM; // Changed by Y.M. to avoid error
+extern uint8_t num_codes;
+
+int main(void) {
+	SYSCLK_init();
+ 3a6:	63 df       	rcall	.-314    	; 0x26e <SYSCLK_init>
+	PIN_init();
+ 3a8:	6d df       	rcall	.-294    	; 0x284 <PIN_init>
+	while(1){	
+		// pin change interrupt for buttons
+		PORTA.PIN1CTRL |= PORT_ISC_LEVEL_gc;  // SW1  set ISR 
+ 3aa:	e0 e0       	ldi	r30, 0x00	; 0
+ 3ac:	f4 e0       	ldi	r31, 0x04	; 4
+ 3ae:	81 89       	ldd	r24, Z+17	; 0x11
+ 3b0:	85 60       	ori	r24, 0x05	; 5
+ 3b2:	81 8b       	std	Z+17, r24	; 0x11
+		PORTA.PIN6CTRL |= PORT_ISC_LEVEL_gc;  // SW2  set ISR
+ 3b4:	86 89       	ldd	r24, Z+22	; 0x16
+ 3b6:	85 60       	ori	r24, 0x05	; 5
+ 3b8:	86 8b       	std	Z+22, r24	; 0x16
+		PORTA.PIN7CTRL |= PORT_ISC_LEVEL_gc;  // SW0  set ISR
+ 3ba:	87 89       	ldd	r24, Z+23	; 0x17
+ 3bc:	85 60       	ori	r24, 0x05	; 5
+ 3be:	87 8b       	std	Z+23, r24	; 0x17
+		sei();          // Interrupt enable
+ 3c0:	78 94       	sei
+		
+		// Sleep mode setting and enable
+		set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+ 3c2:	a0 e5       	ldi	r26, 0x50	; 80
+ 3c4:	b0 e0       	ldi	r27, 0x00	; 0
+ 3c6:	8c 91       	ld	r24, X
+ 3c8:	89 7f       	andi	r24, 0xF9	; 249
+ 3ca:	84 60       	ori	r24, 0x04	; 4
+ 3cc:	8c 93       	st	X, r24
+		sleep_enable();	// Pin change interrupt setting
+ 3ce:	8c 91       	ld	r24, X
+ 3d0:	81 60       	ori	r24, 0x01	; 1
+ 3d2:	8c 93       	st	X, r24
+
+		sleep_cpu();    // put CPU into Power Down Sleep Mode
+ 3d4:	88 95       	sleep
+
+		// after CPU wake
+		PORTA.PIN1CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW1
+ 3d6:	81 89       	ldd	r24, Z+17	; 0x11
+ 3d8:	8a 7f       	andi	r24, 0xFA	; 250
+ 3da:	81 8b       	std	Z+17, r24	; 0x11
+		PORTA.PIN6CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW2
+ 3dc:	86 89       	ldd	r24, Z+22	; 0x16
+ 3de:	8a 7f       	andi	r24, 0xFA	; 250
+ 3e0:	86 8b       	std	Z+22, r24	; 0x16
+		PORTA.PIN7CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW0
+ 3e2:	87 89       	ldd	r24, Z+23	; 0x17
+ 3e4:	8a 7f       	andi	r24, 0xFA	; 250
+ 3e6:	87 8b       	std	Z+23, r24	; 0x17
+
+		uint8_t i,j;  // counter i is not used
+		uint16_t ontime, offtime;
+		// if it doesn't need repeat IR emission, please comment out next line and line 288 "}"
+		while ((~PORTA.IN & SW0_PIN) | (~PORTA.IN & SW1_PIN) | (~PORTA.IN & SW2_PIN)){ //while PINB1 or PIN2B is low then continue IR LED flashing
+ 3e8:	31 c0       	rjmp	.+98     	; 0x44c <__LOCK_REGION_LENGTH__+0x4c>
+        // Play IR code for each buttons
+		quickflashLED(); // visible indication that a code is being output
+ 3ea:	73 df       	rcall	.-282    	; 0x2d2 <quickflashLED>
+		//    PGM_P thecode_p = pgm_read_word(powerCodes+i);     // point to next POWER code
+		PGM_P thecode_p = (PGM_P)pgm_read_word(irCodes+Play);     // emit each IR codes respectivelyto Play #
+ 3ec:	e0 91 80 3f 	lds	r30, 0x3F80	; 0x803f80 <__DATA_REGION_ORIGIN__>
+ 3f0:	f0 91 81 3f 	lds	r31, 0x3F81	; 0x803f81 <__DATA_REGION_ORIGIN__+0x1>
+ 3f4:	ee 0f       	add	r30, r30
+ 3f6:	ff 1f       	adc	r31, r31
+ 3f8:	ec 5c       	subi	r30, 0xCC	; 204
+ 3fa:	ff 4f       	sbci	r31, 0xFF	; 255
+ 3fc:	85 91       	lpm	r24, Z+
+ 3fe:	94 91       	lpm	r25, Z
+ 400:	ec 01       	movw	r28, r24
+		uint8_t freq = pgm_read_byte(thecode_p);
+ 402:	fc 01       	movw	r30, r24
+ 404:	84 91       	lpm	r24, Z
+		// set TCA0 CMP0 for Timer1 to output this POWER code's carrier frequency
+		TCA0.SINGLE.CMP0 = freq;
+ 406:	90 e0       	ldi	r25, 0x00	; 0
+ 408:	80 93 28 0a 	sts	0x0A28, r24	; 0x800a28 <__RODATA_PM_OFFSET__+0x7f8a28>
+ 40c:	90 93 29 0a 	sts	0x0A29, r25	; 0x800a29 <__RODATA_PM_OFFSET__+0x7f8a29>
+		
+		// transmit all codeElements for this POWER code (a codeElement is an onTime and an offTime)
+		// transmitting onTime means pulsing the IR emitters at the carrier frequency for the length of time specified in onTime
+		// transmitting offTime means no output from the IR emitters for the length of time specified in offTime
+		j = 0;  // index into codeElements of this POWER code
+ 410:	10 e0       	ldi	r17, 0x00	; 0
+		do {
+			// read the onTime and offTime from the program memory
+			ontime = pgm_read_word(thecode_p+(j*4)+1);
+ 412:	21 2f       	mov	r18, r17
+ 414:	30 e0       	ldi	r19, 0x00	; 0
+ 416:	22 0f       	add	r18, r18
+ 418:	33 1f       	adc	r19, r19
+ 41a:	22 0f       	add	r18, r18
+ 41c:	33 1f       	adc	r19, r19
+ 41e:	f9 01       	movw	r30, r18
+ 420:	31 96       	adiw	r30, 0x01	; 1
+ 422:	ec 0f       	add	r30, r28
+ 424:	fd 1f       	adc	r31, r29
+ 426:	85 91       	lpm	r24, Z+
+ 428:	94 91       	lpm	r25, Z
+			offtime = pgm_read_word(thecode_p+(j*4)+3);
+ 42a:	f9 01       	movw	r30, r18
+ 42c:	33 96       	adiw	r30, 0x03	; 3
+ 42e:	ec 0f       	add	r30, r28
+ 430:	fd 1f       	adc	r31, r29
+ 432:	e5 90       	lpm	r14, Z+
+ 434:	f4 90       	lpm	r15, Z
+
+			xmitCodeElement(ontime, offtime);  // transmit this codeElement (ontime and offtime)
+ 436:	b7 01       	movw	r22, r14
+ 438:	69 df       	rcall	.-302    	; 0x30c <xmitCodeElement>
+			j++;        // turn off IR LED
+ 43a:	1f 5f       	subi	r17, 0xFF	; 255
+		} while ( offtime != 0 );  // offTime = 0 signifies last codeElement for a POWER code
+ 43c:	ef 28       	or	r14, r15
+ 43e:	49 f7       	brne	.-46     	; 0x412 <__LOCK_REGION_LENGTH__+0x12>
+
+		PORTA.OUTCLR = IRLED_PIN ;           // turn off IR LED
+ 440:	88 e0       	ldi	r24, 0x08	; 8
+ 442:	80 93 06 04 	sts	0x0406, r24	; 0x800406 <__RODATA_PM_OFFSET__+0x7f8406>
+
+		// delay 250 milliseconds before transmitting next POWER code
+		delay_ten_us(5000);  // 50mS wait untill next IR emit
+ 446:	88 e8       	ldi	r24, 0x88	; 136
+ 448:	93 e1       	ldi	r25, 0x13	; 19
+ 44a:	2d df       	rcall	.-422    	; 0x2a6 <delay_ten_us>
+		PORTA.PIN7CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW0
+
+		uint8_t i,j;  // counter i is not used
+		uint16_t ontime, offtime;
+		// if it doesn't need repeat IR emission, please comment out next line and line 288 "}"
+		while ((~PORTA.IN & SW0_PIN) | (~PORTA.IN & SW1_PIN) | (~PORTA.IN & SW2_PIN)){ //while PINB1 or PIN2B is low then continue IR LED flashing
+ 44c:	e0 e0       	ldi	r30, 0x00	; 0
+ 44e:	f4 e0       	ldi	r31, 0x04	; 4
+ 450:	80 85       	ldd	r24, Z+8	; 0x08
+ 452:	90 e0       	ldi	r25, 0x00	; 0
+ 454:	80 95       	com	r24
+ 456:	90 95       	com	r25
+ 458:	9c 01       	movw	r18, r24
+ 45a:	20 78       	andi	r18, 0x80	; 128
+ 45c:	33 27       	eor	r19, r19
+ 45e:	90 85       	ldd	r25, Z+8	; 0x08
+ 460:	89 2f       	mov	r24, r25
+ 462:	90 e0       	ldi	r25, 0x00	; 0
+ 464:	80 95       	com	r24
+ 466:	90 95       	com	r25
+ 468:	82 70       	andi	r24, 0x02	; 2
+ 46a:	99 27       	eor	r25, r25
+ 46c:	82 2b       	or	r24, r18
+ 46e:	93 2b       	or	r25, r19
+ 470:	20 85       	ldd	r18, Z+8	; 0x08
+ 472:	30 e0       	ldi	r19, 0x00	; 0
+ 474:	20 95       	com	r18
+ 476:	30 95       	com	r19
+ 478:	20 74       	andi	r18, 0x40	; 64
+ 47a:	33 27       	eor	r19, r19
+ 47c:	82 2b       	or	r24, r18
+ 47e:	93 2b       	or	r25, r19
+ 480:	89 2b       	or	r24, r25
+ 482:	09 f0       	breq	.+2      	; 0x486 <__LOCK_REGION_LENGTH__+0x86>
+ 484:	b2 cf       	rjmp	.-156    	; 0x3ea <main+0x44>
+		// delay 250 milliseconds before transmitting next POWER code
+		delay_ten_us(5000);  // 50mS wait untill next IR emit
+		}
+	
+		// flash the visible LED on PB0  4 times to indicate that we're done
+		delay_ten_us(20000); // wait 200mS
+ 486:	80 e2       	ldi	r24, 0x20	; 32
+ 488:	9e e4       	ldi	r25, 0x4E	; 78
+ 48a:	0d df       	rcall	.-486    	; 0x2a6 <delay_ten_us>
+		quickflashLED4x();  // flash 4 times to indicate emit IR code finihed 
+ 48c:	31 df       	rcall	.-414    	; 0x2f0 <quickflashLED4x>
+	}
+ 48e:	8d cf       	rjmp	.-230    	; 0x3aa <main+0x4>
+
+00000490 <_exit>:
+ 490:	f8 94       	cli
+
+00000492 <__stop_program>:
+ 492:	ff cf       	rjmp	.-2      	; 0x492 <__stop_program>
