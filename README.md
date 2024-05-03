@@ -85,7 +85,7 @@ IR LEDには直列に1Ωの抵抗をいれてますが、実験的には無く�
 もうこのICは手に入りませんが、コンパチのPT2560[PT2560](url)という中華ICのデータシートが見つかりましたので、これを参考に    
 必要なコードを解析していきます。（実際はオシロスコープによる波形解析を行った）  
 
-<!--![PT2560 CODE 2024-05-03 011738](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/00e489bc-4ffc-4ae1-a2fb-4cbaf296b434)  -->
+<!<!----![PT2560 CODE 2024-05-03 011738](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/00e489bc-4ffc-4ae1-a2fb-4cbaf296b434)  -->
 <img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/00e489bc-4ffc-4ae1-a2fb-4cbaf296b434" width="640">   
 
 この図でLeader Codeは3.57ｍSと1.80ｍS、”0”は420/480uS、"1"は420/1320uSでした。  
@@ -101,5 +101,13 @@ ATTINY202のスリープ時電流を測定しました。
 0.1uAで、ATTINY85の0.2～0.3uAより明らかに小さいです。  
 <!--![IMG_0471](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/f6b65397-b703-45a6-a5ef-4505950a0ba0)-->
 <img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/f6b65397-b703-45a6-a5ef-4505950a0ba0" width="480">  
+
+## クロックの設定 (8MHz)
+今回は、ATTINY85のクロックに合わせてクロックは8MHz設定にします。
+（assmblerのNOPでタイミングを調整した delay_ten_us() という10uS単位のディレイ関数があるためです）
+<!--![TINY202 default clock 2024-05-03 102832](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/a853f67f-75dc-4714-aa42-43a20f36e04d)-->
+<img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/a853f67f-75dc-4714-aa42-43a20f36e04d" width="480">  
+
+
 
 
