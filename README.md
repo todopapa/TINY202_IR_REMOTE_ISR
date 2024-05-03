@@ -187,6 +187,10 @@ PORTA.OUTCLR = IRLED_PIN(PIN3_bm);　だけでは”L"にならず、IR LEDが�
 PORTMUXで代替ピンの使用も可能になります。WO0のデフォールトの出力はPA3ですが、PA7にも出力できます。
 <img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/922acc81-6f77-4c1d-9545-99a526dc1c91" width="640">
 
+## Pin Chnge Interruptの使い方
+  詳細は工事中です。すみません,
+  コードを見ていただけると、これで動いています。
+
 ## 他のATTINY202開発参考資料
 
 pin change Interrupt  
