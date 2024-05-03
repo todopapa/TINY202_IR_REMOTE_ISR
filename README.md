@@ -116,6 +116,13 @@ ATTINY202のクロック系統の構成は下記のように、MAIN_CLOCK源の�
 <!--![TINY202 default clock 2024-05-03 10
 2832](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/a853f67f-75dc-4714-aa42-43a20f36e04d)-->
 
+```
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
+
+
 
 
 
