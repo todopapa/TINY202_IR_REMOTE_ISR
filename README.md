@@ -82,7 +82,7 @@ IR LEDには直列に1Ωの抵抗をいれてますが、実験的には無く�
 
 パナソニック天井灯リモコン　HK9337   
 このリモコンはM5060という三菱のリモコン用ICを使用しています。   
-もうこのICは手に入りませんが、コンパチのPT2560[PT2560](url)という中華ICのデータシートが見つかりましたので、これを参考に    
+もうこのICは手に入りませんが、コンパチの[PT2560](https://pdf.dzsc.com/60-/PT2560-002.pdf)という中華ICのデータシートが見つかりましたので、これを参考に    
 必要なコードを解析していきます。（実際はオシロスコープによる波形解析を行った）  
 
 <!<!----![PT2560 CODE 2024-05-03 011738](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/00e489bc-4ffc-4ae1-a2fb-4cbaf296b434)  -->
@@ -134,15 +134,20 @@ FUSE.OSCCFGレジスタの設定は下記、デフォールトは0x02（20MHz）
 <img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/407393ac-5878-47cb-8575-22901651c689" width="640"> 
 
 FUSEの設定は、プログラムに構造体で記載してHEXファイルにFUSEデータを入れて、書き込み器でFLashデータと一緒にFUSEデータを  
-書き込む方法もあるのですが、これはうまくいきませんでした。
-AVR Freakで調べて、AVRDudeで書き込む方法があると知ったので、もっぱらこちらでFUSEを書き込んでいます。  
+書き込む方法もあるのですが、これはなぜかうまくいきませんでした。
+困りはててAVR Freakで調べて、AVRDudeで書き込む方法があると知ったので、もっぱらこちらでFUSEを書き込んでいます。  
 fuse2がFUSE.OSCCFGレジスタになります。  
 
 Fuses on ATtiny1614 with AVRDUDE  
 https://www.avrfreaks.net/s/topic/a5C3l000000BqV9EAK/t391706  
 WDTCFG = fuse0, BODCFG = fuse1.....  
-ディレクトリ　D:\Program Files (x86)\AVRDUDESS　にて  
+ディレクトリ　D:\Program Files (x86)\AVRDUDESS　にて  (fuse2の指定だけでOKです）
 avrdude -Cavrdude.conf -c serialupdi -p t202 -P COM5 -U fuse0:w:0x00:m -U fuse1:w:0x00:m -U fuse2:w:0x1:m   
+
+## TIMER/COUNTERの使い方
+ここがATTINY85と大きく変わっているので、やっぱり説明せんばなりませんね。
+MicroChipの技術資料 [TB3217 Getting Started with Timer/Counter Type A (TCA)]([url](https://www.microchip.com/en-us/application-notes/tb3217)) を参考にしました。
+
 
 ## 他のATTINY202開発参考資料
 
