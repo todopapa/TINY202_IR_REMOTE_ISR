@@ -150,6 +150,33 @@ MicroChipの技術資料 [TB3217 Getting Started with Timer/Counter Type A (TCA)
 TINY85ではTCNT0とTCNT1という２つの8bitカウンタ/タイマがあって、OCRnX, OCRnBに設定した値と比較して任意の周波数やディレイを作ってました。
 これに対しTINY202ではTCA0とTCB0という2つの16bitカウンタ/タイマがあって前段のPrescaler、CNTレジスタ、PERレジスタ、CMPnレジスタで制御しています。
 
+```
+void xmitCodeElement(uint16_t ontime, uint16_t offtime ) {
+	// start TCA0 outputting the carrier frequency to IR emitters on CMP0 WO0 (PA3, pin 7)
+	/* set waveform output on PORT A */
+	TCA0.SINGLE.CTRLB = TCA_SINGLE_CMP0EN_bm // enable compare channel 0
+	| TCA_SINGLE_WGMODE_FRQ_gc;	// set Frequency mode
+	/* disable event counting */
+	TCA0.SINGLE.EVCTRL &= ~(TCA_SINGLE_CNTEI_bm);
+	/* set frequency in FRQ mode */
+	//	TCA0.SINGLE.CMP0 = PERIOD_EXAMPLE_VALUE;   //the period time (FRQ) already set in main()
+	/* set clock source (sys_clk/div_value) */
+	TCA0.SINGLE.CTRLA = TCA_SINGLE_CLKSEL_DIV1_gc   // set clock source (sys_clk/1)
+	| TCA_SINGLE_ENABLE_bm; /* and start timer */
+	// keep transmitting carrier for onTime
+	delay_ten_us(ontime);
+	//for debug continue emitting test
+	// while(1);
+	
+	// turn off output to IR emitters on 0C1A (PB1, pin 6) for offTime
+	TCA0.SINGLE.CTRLA &= ~(TCA_SINGLE_ENABLE_bm); /* stop timer to set bit "0" */
+	TCA0.SINGLE.CTRLB = 0;	// CTRLB register RESET add for forced OUTPUT "L"
+	PORTA.OUTCLR = IRLED_PIN;  // turn off IR LED
+
+	delay_ten_us(offtime);
+}
+```
+
 ## 他のATTINY202開発参考資料
 
 pin change Interrupt  
