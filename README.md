@@ -159,7 +159,7 @@ void xmitCodeElement(uint16_t ontime, uint16_t offtime ) {
 	/* disable event counting */
 	TCA0.SINGLE.EVCTRL &= ~(TCA_SINGLE_CNTEI_bm);
 	/* set frequency in FRQ mode */
-	//	TCA0.SINGLE.CMP0 = PERIOD_EXAMPLE_VALUE;   //the period time (FRQ) already set in main()
+	// TCA0.SINGLE.CMP0 = PERIOD_EXAMPLE_VALUE;   //the period time (FRQ) already set in main()
 	/* set clock source (sys_clk/div_value) */
 	TCA0.SINGLE.CTRLA = TCA_SINGLE_CLKSEL_DIV1_gc   // set clock source (sys_clk/1)
 	| TCA_SINGLE_ENABLE_bm; /* and start timer */
@@ -176,6 +176,15 @@ void xmitCodeElement(uint16_t ontime, uint16_t offtime ) {
 	delay_ten_us(offtime);
 }
 ```
+1.CTRLBの設定：TCA0をFRQモード (WOnに出力を出す)、コンペアレジスタにCMP0を選択（WO0に出力される）  
+2.EVCTRLの設定：EVENT入力を止める    
+3.CMP0レジスタに比較値を入れ出力周波数を決める（これはmain()で設定するので、ここはコメントアウト）    
+4.CTRLAの設定：プリスケーラの設定1/1、TCA0をEnable（起動）する    
+止めるときは、CTRLAでTCA0をDisableするだけでなく、CTRLBも0x00を入れてWO0の出力を止めないと  
+PORTA.OUTCLR = IRLED_PIN;　だけでは”L"にならず、IR LEDが光りっぱなしになるので注意してください。  
+
+なお、コンペアレジスタ CMPnを選択すると出力はWOnになります。　下記の出力ピンリストで参照ください。  
+![TIY202_MUX_PINS 2024-05-03 120734](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/922acc81-6f77-4c1d-9545-99a526dc1c91)
 
 ## 他のATTINY202開発参考資料
 
