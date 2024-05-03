@@ -116,14 +116,19 @@ ATTINY202のクロック系統の構成は下記のように、MAIN_CLOCK源の�
 <!--![TINY202 default clock 2024-05-03 10
 2832](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/a853f67f-75dc-4714-aa42-43a20f36e04d)-->
 
+プログラムのこの部分です。データシートにあるようにプロテクトされている部分ですから_PROTECTED_WRITE() で当該レジスタに書き込みます。
 ```
-function test() {
-  console.log("notice the blank line before this function?");
+void SYSCLK_init(void) {
+	// SYSCLK 8MHz (16MHz /2)
+	/* Set the Main clock to internal 16MHz oscillator*/
+	_PROTECTED_WRITE(CLKCTRL.MCLKCTRLA, CLKCTRL_CLKSEL_OSC20M_gc);
+	/* Set the Main clock divider is / 2 and Main clock prescaler enabled. */
+	_PROTECTED_WRITE(CLKCTRL.MCLKCTRLB, CLKCTRL_PDIV_2X_gc | CLKCTRL_PEN_bm); //0x01
 }
 ```
+これだけでは、内部クロックに20MHzが出力されるので、(FUSE.OSCCFG) fuse で16MHzの設定をする必要があります。
 
-
-
+<img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/2330607a-ac0a-46a9-95c3-d84d2e2e9961" width="480"> 
 
 
 
