@@ -146,8 +146,9 @@ avrdude -Cavrdude.conf -c serialupdi -p t202 -P COM5 -U fuse0:w:0x00:m -U fuse1:
 
 ## TIMER/COUNTERの使い方
 ここがATTINY85と大きく変わっているので、やっぱり説明せんばなりませんね。
-MicroChipの技術資料 [TB3217 Getting Started with Timer/Counter Type A (TCA)]([url](https://www.microchip.com/en-us/application-notes/tb3217)) を参考にしました。
-
+MicroChipの技術資料 [TB3217 Getting Started with Timer/Counter Type A (TCA)](https://www.microchip.com/en-us/application-notes/tb3217)) を参考にしました。
+TINY85ではTCNT0とTCNT1という２つの8bitカウンタ/タイマがあって、OCRnX, OCRnBに設定した値と比較して任意の周波数やディレイを作ってました。
+これに対しTINY202ではTCA0とTCB0という2つの16bitカウンタ/タイマがあって前段のPrescaler、CNTレジスタ、PERレジスタ、CMPnレジスタで制御しています。
 
 ## 他のATTINY202開発参考資料
 
