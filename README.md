@@ -133,29 +133,30 @@ void SYSCLK_init(void) {
 FUSE.OSCCFGレジスタの設定は下記、デフォールトは0x02（20MHz）、これを0x01（16MHz）に変更します。
 <img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/407393ac-5878-47cb-8575-22901651c689" width="640"> 
 
-FUSEの設定は、プログラムに構造体で記載してHEXファイルにFUSEデータを入れて、書き込み器でFLashデータと一緒にFUSEデータを
+FUSEの設定は、プログラムに構造体で記載してHEXファイルにFUSEデータを入れて、書き込み器でFLashデータと一緒にFUSEデータを  
 書き込む方法もあるのですが、これはうまくいきませんでした。
-AVR Freakで調べて、AVRDudeで書き込む方法があると知ったので、もっぱらこちらでFUSEを書き込んでいます。fuse2がFUSE.OSCCFGレジスタになります。
+AVR Freakで調べて、AVRDudeで書き込む方法があると知ったので、もっぱらこちらでFUSEを書き込んでいます。  
+fuse2がFUSE.OSCCFGレジスタになります。  
 
-Fuses on ATtiny1614 with AVRDUDE
-https://www.avrfreaks.net/s/topic/a5C3l000000BqV9EAK/t391706
-WDTCFG = fuse0, BODCFG = fuse1.....
-ディレクトリ　D:\Program Files (x86)\AVRDUDESS　にて
-avrdude -Cavrdude.conf -c serialupdi -p t202 -P COM5 -U fuse0:w:0x00:m -U fuse1:w:0x00:m -U fuse2:w:0x1:m 
+Fuses on ATtiny1614 with AVRDUDE  
+https://www.avrfreaks.net/s/topic/a5C3l000000BqV9EAK/t391706  
+WDTCFG = fuse0, BODCFG = fuse1.....  
+ディレクトリ　D:\Program Files (x86)\AVRDUDESS　にて  
+avrdude -Cavrdude.conf -c serialupdi -p t202 -P COM5 -U fuse0:w:0x00:m -U fuse1:w:0x00:m -U fuse2:w:0x1:m   
 
 ## 他のATTINY202開発参考資料
 
-pin change Interrupt
-https://www.avrfreaks.net/s/topic/a5C3l000000UaC5EAK/t152923
+pin change Interrupt  
+https://www.avrfreaks.net/s/topic/a5C3l000000UaC5EAK/t152923  
 
-Technoblogy New ATtiny Low Power
-http://www.technoblogy.com/show?2RA3
+Technoblogy New ATtiny Low Power  
+http://www.technoblogy.com/show?2RA3  
 
-New ATTINY コード記述方法　Direct Port Manipulation
-https://github.com/SpenceKonde/megaTinyCore/blob/master/megaavr/extras/Ref_DirectPortManipulation.md
+New ATTINY コード記述方法　Direct Port Manipulation  
+https://github.com/SpenceKonde/megaTinyCore/blob/master/megaavr/extras/Ref_DirectPortManipulation.md  
 
-Microchip  Getting Started with GPIO TB3229
-https://www.microchip.com/en-us/application-notes/tb3229
+Microchip  Getting Started with GPIO TB3229  
+https://www.microchip.com/en-us/application-notes/tb3229  
 
-ATTINY202/402/802 datasheet
-https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny202-204-402-404-406-DataSheet-DS40002318A.pdf
+ATTINY202/402/802 datasheet  
+https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny202-204-402-404-406-DataSheet-DS40002318A.pdf  
