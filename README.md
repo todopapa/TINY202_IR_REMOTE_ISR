@@ -180,11 +180,12 @@ void xmitCodeElement(uint16_t ontime, uint16_t offtime ) {
 2.EVCTRLの設定：EVENT入力を止める    
 3.CMP0レジスタに比較値を入れ出力周波数を決める（これはmain()で設定するので、ここはコメントアウト）    
 4.CTRLAの設定：プリスケーラの設定1/1、TCA0をEnable（起動）する    
-止めるときは、CTRLAでTCA0をDisableするだけでなく、CTRLBも0x00を入れてWO0の出力を止めないと  
-PORTA.OUTCLR = IRLED_PIN;　だけでは”L"にならず、IR LEDが光りっぱなしになるので注意してください。  
+止めるときは、CTRLAでTCA0をDisableするだけでなく、CTRLBも0x00を入れてPA3へのWO0の出力を止めないと  
+PORTA.OUTCLR = IRLED_PIN(PIN3_bm);　だけでは”L"にならず、IR LEDが光りっぱなしになるので注意してください。  
 
-なお、コンペアレジスタ CMPnを選択すると出力はWOnになります。　下記の出力ピンリストで参照ください。  
-![TIY202_MUX_PINS 2024-05-03 120734](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/922acc81-6f77-4c1d-9545-99a526dc1c91)
+なお、コンペアレジスタ CMPnを選択すると出力はWOnになります。　下記の出力ピンリストで参照ください。
+PORTMUXで代替ピンの使用も可能になります。WO0のデフォールトの出力はPA3ですが、PA7にも出力できます。
+<img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/922acc81-6f77-4c1d-9545-99a526dc1c91) width="640">
 
 ## 他のATTINY202開発参考資料
 
