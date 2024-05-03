@@ -143,7 +143,7 @@ fuse2がFUSE.OSCCFGレジスタになります。
 Fuses on ATtiny1614 with AVRDUDE  
 https://www.avrfreaks.net/s/topic/a5C3l000000BqV9EAK/t391706  
 WDTCFG = fuse0, BODCFG = fuse1, OSCCFG = fuse2.....  
-ディレクトリ　D:\Program Files (x86)\AVRDUDESS　にて  (fuse2の指定だけでOKです）
+ディレクトリ　D:\Program Files (x86)\AVRDUDESS　にて  (fuse2の指定だけでOKです。COM5は自分の環境に合わせて下さい）  
 avrdude -Cavrdude.conf -c serialupdi -p t202 -P COM5 -U fuse0:w:0x00:m -U fuse1:w:0x00:m -U fuse2:w:0x1:m   
 
 ## TIMER/COUNTERの使い方
