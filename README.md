@@ -16,7 +16,7 @@ TV-B-GONEはライセンスフリーで、Adafruit社が最初の[TV-BーGONEキ
 ハードウェアとファームウェアは当初のV1.0から、いまはV1.2に進化しています。  
 <img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/751ad074-005d-4b4e-a7a8-8ae2165690f8)" width="480">
 <!-- ![TV-B-GONE Adafruit schematics_2024-05-02 235112](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/751ad074-005d-4b4e-a7a8-8ae2165690f8)TV_B_GONE_1R1TV_B_GONE_1R1_AV_AV  -->
-Adafruit TV-BーGONE V1.1　回路図  
+**Adafruit TV-BーGONE V1.1　回路図**  
 
 ## **TINY202_IR_REMOTE_ISR1**
 は、AVRマイコン ATTNY202 のファームウェアです。 　 
@@ -28,7 +28,7 @@ Adafruit TV-BーGONE V1.1　回路図
 
 ## 回路図
 ![ATTINY202 IR REMOTE ](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/8d0a1272-e935-4369-9447-d28aac719b77)   
-**トドお父さん版 TINY202_IR_REMOTE V1.1 for ATMEL STUDIO　回路図 ** 
+**トドお父さん版 TINY202_IR_REMOTE V1.1 for ATMEL STUDIO　回路図** 
 
 回路はAdafruitのV1.1をベースにして、ATTINY85からATTINY202に変更しています。  
 
@@ -48,7 +48,7 @@ PA3のWO0信号は330Ωを介しQ1トランジスタ2SC1815のベースに入力
 Q1のコレクタに２つのIR LEDを並列に接続してパルス的に大電流で駆動します。  
 
 IR LEDには直列に1Ωの抵抗をいれてますが、実験的には無くてもOKの様です。  
-（Q1トランジスタのベース電流ｘhfeで流れる）    
+（Q1トランジスタのベース電流ｘhfeで流せるが実際はIR LEDの特性でリミットがかかる）    
 
 ## ATMEL STUDIOプロジェクトファイル　　
 頭のTINY202_IR_REMOTE_ISR1.atsln がプロジェクトファイルです。TINY202_IR_REMOTE_ISR1フォルダ内には  
