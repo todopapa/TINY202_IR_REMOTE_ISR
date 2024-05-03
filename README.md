@@ -103,10 +103,22 @@ ATTINY202のスリープ時電流を測定しました。
 <img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/f6b65397-b703-45a6-a5ef-4505950a0ba0" width="480">  
 
 ## クロックの設定 (8MHz)
-今回は、ATTINY85のクロックに合わせてクロックは8MHz設定にします。
+今回は、ATTINY85のクロックに合わせてクロックは8MHz設定にします。  
 （assmblerのNOPでタイミングを調整した delay_ten_us() という10uS単位のディレイ関数があるためです）
-<!--![TINY202 default clock 2024-05-03 102832](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/a853f67f-75dc-4714-aa42-43a20f36e04d)-->
+
+ATTINY202のクロック系統の構成は下記のように、MAIN_CLOCK源の設定とプリスケーラになっています。  
+この出力CLK_PERがTIMER/COUNTER等に入力されます。    
+<img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/0daeca7c-4309-414f-91b6-8611f89cafcf" width="480">  
+
+起動RESET後のクロック系統の動作は、下記データシートに書かれているように、Main Clock 20/16MHz　Prescaler 6分周になっています。  
+これを今回は　Main clock 16MHz Prescaler 2分周にして、クロックを8MHzに設定しします。
 <img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/a853f67f-75dc-4714-aa42-43a20f36e04d" width="480">  
+<!--![TINY202 default clock 2024-05-03 10
+2832](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/a853f67f-75dc-4714-aa42-43a20f36e04d)-->
+
+
+
+
 
 
 
