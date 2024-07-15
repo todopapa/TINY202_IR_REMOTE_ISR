@@ -155,7 +155,7 @@ MicroChipの技術資料 [TB3217 Getting Started with Timer/Counter Type A (TCA)
 TINY85ではTCNT0とTCNT1という２つの8bitカウンタ/タイマがあって、OCRnX, OCRnBに設定した値と比較して任意の周波数やディレイを作ってました。
 これに対しTINY202ではTCA0とTCB0という2つの16bitカウンタ/タイマがあって前段のPrescaler、CNTレジスタ、PERレジスタ、CMPnレジスタで制御しています。
 
-```ruby
+```c
 void xmitCodeElement(uint16_t ontime, uint16_t offtime ) {
 	// start TCA0 outputting the carrier frequency to IR emitters on CMP0 WO0 (PA3, pin 7)
 	/* set waveform output on PORT A */
@@ -195,7 +195,8 @@ PORTMUXで代替ピンの使用も可能になります。WO0のデフォール�
 ## Pin Chnge Interruptの使い方
   詳細は工事中です。すみません,
   コードを見ていただけると、これで動いています。
-  
+
+  main.c　の記述
   ```c
 int main(void) {
 	SYSCLK_init();
@@ -216,10 +217,25 @@ int main(void) {
 		// after CPU wake
 		PORTA.PIN1CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW1
 		PORTA.PIN6CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW2
-		PORTA.PIN7CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW0
+		PORTA.PIN7CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW3
+  ```
+割り込み処理  ISR(PORTA_PORT_vect)の記述
+  ```c
+// Pin change interrupt
+ISR (PORTA_PORT_vect) {
+	// pin change detection for each buttons and decide Play #
+	int Buttons = PORTA.IN;
+	if ((Buttons & SW0_PIN) == 0) Play = 0;
+	else if ((Buttons & SW1_PIN) == 0) Play = 1;
+	else if ((Buttons & SW2_PIN) == 0) Play = 2;
+	else Play = 0;
 
+	PORTA.INTFLAGS =  PORT_INT1_bm | PORT_INT6_bm | PORT_INT7_bm ;        // Clear PA1,PA6,PA7 interrupt flag
+}
+  ```
 
-  ``` 
+PINnCTRLレジスタ
+
 
 ## 他のATTINY202開発参考資料
 
