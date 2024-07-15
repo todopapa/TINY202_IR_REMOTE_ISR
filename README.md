@@ -1,5 +1,6 @@
 # TINY202_IR_REMOTE_ISR for ATMEL STUDIO 7.0
-This is a new AVR ATTINY 402/202series IR Remote Controller w/multiple keys input using ISR based on TV-B-GONE program
+This is a new AVR ATTINY 402/202series IR Remote Controller w/multiple keys input using ISR  
+based on TV-B-GONE program  
 <img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/7a59901e-49d1-468d-9323-dc31d36176b7" width="480">
 <!-- ![TINY202_IR_REMOTE 2024-05-02 233458](https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/7a59901e-49d1-468d-9323-dc31d36176b7)　-->
 
