@@ -194,9 +194,11 @@ PORTMUXで代替ピンの使用も可能になります。WO0のデフォール�
 
 ## Pin Chnge Interruptの使い方
   詳細は工事中です。すみません,
-  コードを見ていただけると、これで動いています。
+  コードを見ていただけると、これで動いています。  
+  
+  下の参考資料 ”pin change interruptも参考になると思います。  
 
-  main.c　の記述
+  main.c　の記述  
   ```c
 int main(void) {
 	SYSCLK_init();
@@ -232,14 +234,16 @@ ISR (PORTA_PORT_vect) {
 
 	PORTA.INTFLAGS =  PORT_INT1_bm | PORT_INT6_bm | PORT_INT7_bm ;        // Clear PA1,PA6,PA7 interrupt flag
 }
-  ```
+  ```  
+
 
 PINnCTRLレジスタの記述
 
 
 <img src="https://github.com/user-attachments/assets/3ce80260-3c24-464d-80a1-a7f80b016dda" width="640">
 
-INT Flagレジスタの記述
+  
+INT Flagレジスタの記述  
 
 <img src="https://github.com/user-attachments/assets/141c6219-518a-4229-bac3-775b58bb8870" width="640">
 
