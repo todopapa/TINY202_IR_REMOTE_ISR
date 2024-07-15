@@ -237,11 +237,11 @@ ISR (PORTA_PORT_vect) {
 PINnCTRLレジスタの記述
 
 
-![PINnCTRL 2024-07-15 121843](https://github.com/user-attachments/assets/3ce80260-3c24-464d-80a1-a7f80b016dda)
+<img src="https://github.com/user-attachments/assets/3ce80260-3c24-464d-80a1-a7f80b016dda" width="640">
 
 INT Flagレジスタの記述
 
-![INTFlags 2024-07-15 121922](https://github.com/user-attachments/assets/141c6219-518a-4229-bac3-775b58bb8870)
+<img src="https://github.com/user-attachments/assets/141c6219-518a-4229-bac3-775b58bb8870" width="640">
 
 ## 他のATTINY202開発参考資料
 
