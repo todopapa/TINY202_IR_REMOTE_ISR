@@ -155,7 +155,7 @@ MicroChipの技術資料 [TB3217 Getting Started with Timer/Counter Type A (TCA)
 TINY85ではTCNT0とTCNT1という２つの8bitカウンタ/タイマがあって、OCRnX, OCRnBに設定した値と比較して任意の周波数やディレイを作ってました。
 これに対しTINY202ではTCA0とTCB0という2つの16bitカウンタ/タイマがあって前段のPrescaler、CNTレジスタ、PERレジスタ、CMPnレジスタで制御しています。
 
-```
+```ruby
 void xmitCodeElement(uint16_t ontime, uint16_t offtime ) {
 	// start TCA0 outputting the carrier frequency to IR emitters on CMP0 WO0 (PA3, pin 7)
 	/* set waveform output on PORT A */
@@ -196,7 +196,7 @@ PORTMUXで代替ピンの使用も可能になります。WO0のデフォール�
   詳細は工事中です。すみません,
   コードを見ていただけると、これで動いています。
   
-  ```c_cpp
+  ``` c_cpp
 int main(void) {
 	SYSCLK_init();
 	PIN_init();
