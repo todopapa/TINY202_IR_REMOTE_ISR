@@ -195,7 +195,8 @@ PORTMUXで代替ピンの使用も可能になります。WO0のデフォール�
 ## Pin Chnge Interruptの使い方
   詳細は工事中です。すみません,
   コードを見ていただけると、これで動いています。
-  ```
+  
+  ```c_cpp
 int main(void) {
 	SYSCLK_init();
 	PIN_init();
