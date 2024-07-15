@@ -242,7 +242,6 @@ PINnCTRLレジスタの記述
 
 <img src="https://github.com/user-attachments/assets/3ce80260-3c24-464d-80a1-a7f80b016dda" width="640">  
 
-
   
 INT Flagレジスタの記述  
 
