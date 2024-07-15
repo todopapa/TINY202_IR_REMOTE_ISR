@@ -195,6 +195,30 @@ PORTMUXで代替ピンの使用も可能になります。WO0のデフォール�
 ## Pin Chnge Interruptの使い方
   詳細は工事中です。すみません,
   コードを見ていただけると、これで動いています。
+  ```
+int main(void) {
+	SYSCLK_init();
+	PIN_init();
+	while(1){	
+		// pin change interrupt for buttons
+		PORTA.PIN1CTRL |= PORT_ISC_LEVEL_gc;  // SW1  set ISR 
+		PORTA.PIN6CTRL |= PORT_ISC_LEVEL_gc;  // SW2  set ISR
+		PORTA.PIN7CTRL |= PORT_ISC_LEVEL_gc;  // SW0  set ISR
+		sei();          // Interrupt enable
+		
+		// Sleep mode setting and enable
+		set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+		sleep_enable();	// Pin change interrupt setting
+
+		sleep_cpu();    // put CPU into Power Down Sleep Mode
+
+		// after CPU wake
+		PORTA.PIN1CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW1
+		PORTA.PIN6CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW2
+		PORTA.PIN7CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW0
+
+
+  ``` 
 
 ## 他のATTINY202開発参考資料
 
