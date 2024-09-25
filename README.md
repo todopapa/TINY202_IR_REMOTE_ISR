@@ -12,6 +12,7 @@ based on TV-B-GONE program
 1.CPUをATTINY85から、ATTINY402/202に移植する。  
 2.TVの電源ON/OFF制御だけでなく、汎用のIRリモコンとして使用できるようにする。  
 3.そのためにスイッチを３個つけて、ピンチェンジ割り込みを使って３種類の制御ができるようにする。  
+4.New ATTINYのタイマー/ISRを使った事例がすくないので、情報を超際してその内容をまとめるのも、今回の目的の一つです。  
 
 ### このプロジェクトの概要
 TV-B-GONEはライセンスフリーで、Adafruit社が最初の[TV-BーGONEキット](https://www.adafruit.com/product/73)を出したのは2005年？前後で、  
@@ -247,7 +248,7 @@ INT Flagレジスタの記述
 
 <img src="https://github.com/user-attachments/assets/141c6219-518a-4229-bac3-775b58bb8870" width="640">
 
-## 他のATTINY202開発参考資料
+## 他のATTINY402/202開発参考資料
 
 pin change Interrupt  
 https://www.avrfreaks.net/s/topic/a5C3l000000UaC5EAK/t152923  
