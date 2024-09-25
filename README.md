@@ -1,4 +1,4 @@
-# TINY202_IR_REMOTE_ISR for ATMEL STUDIO 7.0
+# TINY402_IR_REMOTE_ISR for ATMEL STUDIO 7.0
 This is a new AVR ATTINY 402/202series IR Remote Controller w/multiple keys input using pin change ISR  
 based on TV-B-GONE program  
 <img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/7a59901e-49d1-468d-9323-dc31d36176b7" width="480">
@@ -9,7 +9,7 @@ based on TV-B-GONE program
 前回 TV-B-GONE V1.2のファームウェアをATMEL STUDIO7.0に移植しました。  
 今回は、下記の内容を実装します。  
 
-1.CPUをATTINY85から、ATTINY202に移植する。  
+1.CPUをATTINY85から、ATTINY402/202に移植する。  
 2.TVの電源ON/OFF制御だけでなく、汎用のIRリモコンとして使用できるようにする。  
 3.そのためにスイッチを３個つけて、ピンチェンジ割り込みを使って３種類の制御ができるようにする。  
 
