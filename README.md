@@ -150,7 +150,11 @@ WDTCFG = fuse0, BODCFG = fuse1, OSCCFG = fuse2.....
 ディレクトリ　D:\Program Files (x86)\AVRDUDESS　にて  (fuse2の指定だけでOKです。COM5は自分の環境に合わせて下さい）  
 avrdude -Cavrdude.conf -c serialupdi -p t202 -P COM5 -U fuse0:w:0x00:m -U fuse1:w:0x00:m -U fuse2:w:0x1:m   
 
-## TIMER/COUNTERの使い方
+## AVRDUDESSを使ったプログラムとFUSE書き込みの方法  
+UPDIでのHV対応プログラマも作りましたので、GUIのAVRDUDESSを使った書き込み方法について、こちらに詳しく書いています。
+https://github.com/todopapa/UPDI_HV_WRITER-w-RESET  
+
+## TIMER/COUNTERの使い方  
 ここがATTINY85と大きく変わっているので、やっぱり説明せんばなりませんね。
 MicroChipの技術資料 [TB3217 Getting Started with Timer/Counter Type A (TCA)](https://www.microchip.com/en-us/application-notes/tb3217)) を参考にしました。
 TINY85ではTCNT0とTCNT1という２つの8bitカウンタ/タイマがあって、OCRnX, OCRnBに設定した値と比較して任意の周波数やディレイを作ってました。
