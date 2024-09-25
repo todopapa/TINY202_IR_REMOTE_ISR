@@ -253,6 +253,9 @@ INT Flagレジスタの記述
 
 <img src="https://github.com/user-attachments/assets/141c6219-518a-4229-bac3-775b58bb8870" width="640">
 
+## 動作確認のYoutube画像  
+https://youtu.be/LKW64Bx1fvs  
+
 ## 他のATTINY402/202開発参考資料
 
 pin change Interrupt  
