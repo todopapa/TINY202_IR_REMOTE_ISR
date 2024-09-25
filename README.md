@@ -36,6 +36,7 @@ TV-B-GONEはライセンスフリーで、Adafruit社が最初の[TV-BーGONEキ
 **トドお父さん版 TINY202_IR_REMOTE V1.1 for ATMEL STUDIO　回路図**
 
 回路はAdafruitのV1.1をベースにして、ATTINY85からATTINY202に変更しています。  
+（もちろんATTINY402でも対応できます）  
 
 また、オリジナルはRESETを"L"にしてプログラムを先頭から走らせるようにしていました。  
 ATTINY202はRESETがUPDIピンにアサインされてハードRESETが使えません。  
