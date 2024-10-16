@@ -270,5 +270,8 @@ https://github.com/SpenceKonde/megaTinyCore/blob/master/megaavr/extras/Ref_Direc
 Microchip  Getting Started with GPIO TB3229  
 https://www.microchip.com/en-us/application-notes/tb3229  
 
+Getting started ATtiny 1 & 0 series / Application Notes  
+https://www.avrfreaks.net/s/topic/a5C3l000000UZTjEAO/t150173  
+
 ATTINY202/402/802 datasheet  
 https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny202-204-402-404-406-DataSheet-DS40002318A.pdf  
