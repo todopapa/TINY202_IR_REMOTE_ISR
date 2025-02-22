@@ -158,6 +158,7 @@ https://github.com/todopapa/UPDI_HV_WRITER-w-RESET
 **後日追記**：ChatGPT先生にお伺いを立てたのですが、やはりプログラムでFUSEを書き換える方法はないようです。  
 最近は、AVRDUDEをGUI化した、AVRDUDESSをよく使っています。  
 こちらに、AVRDUDESSを使ってプログラムとFUSEを書く方法を説明しているので、参考にしてください。 
+**ATTINY202/402のFUSEビットをAVRDUDESSを使って書く方法**
 https://ameblo.jp/powpher/entry-12863906067.html   
   
 ## TIMER/COUNTERの使い方  
