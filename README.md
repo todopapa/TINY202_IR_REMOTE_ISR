@@ -141,7 +141,7 @@ FUSE.OSCCFGレジスタの設定は下記、デフォールトは0x02（20MHz）
 <img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/407393ac-5878-47cb-8575-22901651c689" width="640"> 
 
 FUSEの設定は、プログラムに構造体で記載してHEXファイルにFUSEデータを入れて、書き込み器でFLashデータと一緒にFUSEデータを  
-書き込む方法もあるのですが、これはなぜかうまくいきませんでした。
+書き込む方法もあるようなのですが、これはなぜかうまくいきませんでした。　  
 困りはててAVR Freakで調べて、AVRDudeで書き込む方法があると知ったので、もっぱらこちらでFUSEを書き込んでいます。  
 fuse2がFUSE.OSCCFGレジスタになります。  
 
@@ -149,11 +149,15 @@ Fuses on ATtiny1614 with AVRDUDE
 https://www.avrfreaks.net/s/topic/a5C3l000000BqV9EAK/t391706  
 WDTCFG = fuse0, BODCFG = fuse1, OSCCFG = fuse2.....  
 ディレクトリ　D:\Program Files (x86)\AVRDUDESS　にて  (fuse2の指定だけでOKです。COM5は自分の環境に合わせて下さい）  
-avrdude -Cavrdude.conf -c serialupdi -p t202 -P COM5 -U fuse0:w:0x00:m -U fuse1:w:0x00:m -U fuse2:w:0x1:m   
-
+avrdude -Cavrdude.conf -c serialupdi -p t202 -P COM5 -U fuse0:w:0x00:m -U fuse1:w:0x00:m -U fuse2:w:0x1:m     
+  
 ## AVRDUDESSを使ったプログラムとFUSE書き込みの方法  
 UPDIでのHV対応プログラマも作りましたので、GUIのAVRDUDESSを使った書き込み方法について、こちらに詳しく書いています。
 https://github.com/todopapa/UPDI_HV_WRITER-w-RESET  
+  
+**後日追記**：ChatGPT先生にお伺いを立てたのですが、やはりプログラムでFUSEを書き換える方法はないようです。  
+最近は、AVRDUDEをGUI化した、AVRDUDESSをよく使っています。  
+こちらに、AVRDUDESSを使ってプログラムとFUSEを書く方法を説明しているので、参考にしてください。 
 
 ## TIMER/COUNTERの使い方  
 ここがATTINY85と大きく変わっているので、やっぱり説明せんばなりませんね。
