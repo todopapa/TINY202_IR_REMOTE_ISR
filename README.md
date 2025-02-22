@@ -225,19 +225,20 @@ int main(void) {
 		PORTA.PIN6CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW2
 		PORTA.PIN7CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW3
   ```
-1.PORTA.PINnCTRLで各ピンの割り込みを設定する
+1. PORTA.PINnCTRLで各ピンの割り込みを設定する
 　下記 PINnCTRLレジスタの記述のISC[2:0] で割り込みを設定します。  
 　・PORT_ISC_LEVEL_gcは0x05で/* Sense low Level */ローレベルで割り込みの設定です。(FallingでもOK)    
  　 なお、プルアップの有無もこのレジスタで各ピンごとに設定します。  
      
-2.set_sleep_modeでsleep時の動作を設定する。  
-　・SLEEP_MODE_PWR_DOWNではSleep時にパワーダウンする設定ですが、他にIDLE,STANDBY動作があります。  、
+2. set_sleep_modeでsleep時の動作を設定する。  
+　・SLEEP_MODE_PWR_DOWNではSleep時に割り込みを残して最大パワーダウンする設定です。  、
    
-3.sleep_enable()でsleepイネーブルにする、
+3. sleep_enable()でsleepイネーブルにする、
  sleepのctrlAレジスタにSleep_modeとsleep_enableの設定があります。Sleepイネーブルにします。  
    
-4.sleep_cpu()でSleepに入る。
-　これは、定義をみると下記のようになっています。  
+4. sleep_cpu()でSleepに入る。
+   電力を低減するために割り込み以外の動作を止めて、各スイッチからのピン変化割込み待ちになります。  
+　これは、前の2.3.を含め、定義をみると下記のようになっています。  
   
  ```c
  SLEEP.CTRLA = SLEEP_MODE_PWR_DOWN | SLEEP_SEN_bm; // Power Downモード + Sleep Enable
@@ -245,15 +246,21 @@ __asm__ __volatile__ ("sleep");  // ここでCPUがスリープ状態に入る
   ```
 asmのsleep命令とはなんでしょうか？ これはコンパイラが内部命令に置き換えるコマンドのようです。
 ChatGPT先生によるとAVR Instruction Set Manual (AVR命令セットマニュアル) 内にあり、  
+機械語のSLEEPの二モニック 0x9588に変換されるとのことです。  
+  
+5. 割り込みが入るとWakeupして、ISR (PORTA_PORT_vect)の処理に入ります
+   ATTINY85と違い、new ATTINYでは各ピンごとに割り込み要因としてフラグが立ちます。
+   割り込みが入ったピンを確認し、ピンごとの処理を行うことができます。
+　 今回は、それぞれのピンをポーリングして押し下げたスイッチに対応した値を変数Playにいれます。
+　割り込みフラグも全て一緒にクリアします。
+　ちなみにATTINY85では、ISR処理に入ると自動で全て割り込みフラグはクリアされます。
 
-```yaml
-Mnemonic:  SLEEP
-Opcode:    1001 0101 1000 1000 (0x9588)
-Description: Enter Sleep Mode
-  ```
-と機械語の0x9588に変換されるとのことです。  
+6. main()に戻って、処理を始める。
+   while(1) 文の// after CPU wake以降の処理を行う。まず、各ピン変化割り込みをディスエーブルします。    
+　 押されたスイッチに対応する処理（IRコマンド発光）を行います。  
 
-割り込み処理  ISR(PORTA_PORT_vect)の記述
+割り込み処理  ISR(PORTA_PORT_vect)の記述  
+
   ```c
 // Pin change interrupt
 ISR (PORTA_PORT_vect) {
@@ -277,10 +284,6 @@ PINnCTRLレジスタの記述
 INT Flagレジスタの記述  
 
 <img src="https://github.com/user-attachments/assets/141c6219-518a-4229-bac3-775b58bb8870" width="640">  
-
-SLPCTRL.CTRLAレジスタの記述    
-
-<img src="https://github.com/user-attachments/assets//b23d1385-72a3-45b9-bec2-78a0704e28d6" width="640">    
 
 
 ## 動作確認のYoutube画像  
