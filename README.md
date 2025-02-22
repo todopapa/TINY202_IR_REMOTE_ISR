@@ -158,7 +158,8 @@ https://github.com/todopapa/UPDI_HV_WRITER-w-RESET
 **後日追記**：ChatGPT先生にお伺いを立てたのですが、やはりプログラムでFUSEを書き換える方法はないようです。  
 最近は、AVRDUDEをGUI化した、AVRDUDESSをよく使っています。  
 こちらに、AVRDUDESSを使ってプログラムとFUSEを書く方法を説明しているので、参考にしてください。 
-
+https://ameblo.jp/powpher/entry-12863906067.html   
+  
 ## TIMER/COUNTERの使い方  
 ここがATTINY85と大きく変わっているので、やっぱり説明せんばなりませんね。
 MicroChipの技術資料 [TB3217 Getting Started with Timer/Counter Type A (TCA)](https://www.microchip.com/en-us/application-notes/tb3217)) を参考にしました。
