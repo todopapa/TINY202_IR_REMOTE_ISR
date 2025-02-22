@@ -137,7 +137,7 @@ void SYSCLK_init(void) {
 
 <img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/2330607a-ac0a-46a9-95c3-d84d2e2e9961" width="640"> 
 
-FUSE.OSCCFGレジスタの設定は下記、デフォールトは0x02（20MHz）、これを0x01（16MHz）に変更します。
+FUSE.OSCCFGレジスタの設定は下記、デフォールトは0x02（20MHz）、これを0x01（16MHz）に変更します。  
 <img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/407393ac-5878-47cb-8575-22901651c689" width="640"> 
 
 FUSEの設定は、プログラムに構造体で記載してHEXファイルにFUSEデータを入れて、書き込み器でFLashデータと一緒にFUSEデータを  
@@ -228,15 +228,22 @@ int main(void) {
 		PORTA.PIN7CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW3
   ```
 1.PORTA.PINnCTRLで各ピンの割り込みを設定する
-　下記 PINnCTRLレジスタの記述のISC[2:0] で割り込みを設定します。
-　・PORT_ISC_LEVEL_gcは0x05で/* Sense low Level */ローレベルで割り込みの設定です。(FallingでもOK)  
- 　 なお、プルアップの有無もこのレジスタで各ピンごとに設定します。
-2.set_sleep_modeでsleep時の動作を設定する。
-　・SLEEP_MODE_PWR_DOWNではSleep時にパワーダウンする設定ですが、他にIDLE,STANDBY動作があります。、
-3.sleep_enable()でsleep時の動作を設定する。
+　下記 PINnCTRLレジスタの記述のISC[2:0] で割り込みを設定します。  
+　・PORT_ISC_LEVEL_gcは0x05で/* Sense low Level */ローレベルで割り込みの設定です。(FallingでもOK)    
+ 　 なお、プルアップの有無もこのレジスタで各ピンごとに設定します。  
+2.set_sleep_modeでsleep時の動作を設定する。  
+　・SLEEP_MODE_PWR_DOWNではSleep時にパワーダウンする設定ですが、他にIDLE,STANDBY動作があります。  、
+3.sleep_enable()でsleepイネーブルにする、
+ sleepのctrlAレジスタにSleep_modeとsleep_enableの設定があります。Sleepイネーブルにします。  
+4.sleep_cpu()でSleepに入る。
+　これは、定義をみると下記になっています。  
+
+ ```c
+ SLEEP.CTRLA = SLEEP_MODE_PWR_DOWN | SLEEP_SEN_bm; // Power Downモード + Sleep Enable
+__asm__ __volatile__ ("sleep");  // ここでCPUがスリープ状態に入る
+  ```
 
 
-<img src="https://github.com/user-attachments/assets//b23d1385-72a3-45b9-bec2-78a0704e28d6" width="640">  
 
 割り込み処理  ISR(PORTA_PORT_vect)の記述
   ```c
@@ -254,15 +261,19 @@ ISR (PORTA_PORT_vect) {
   ```  
 
 
-PINnCTRLレジスタの記述
-
+PINnCTRLレジスタの記述  
 
 <img src="https://github.com/user-attachments/assets/3ce80260-3c24-464d-80a1-a7f80b016dda" width="640">  
 
   
 INT Flagレジスタの記述  
 
-<img src="https://github.com/user-attachments/assets/141c6219-518a-4229-bac3-775b58bb8870" width="640">
+<img src="https://github.com/user-attachments/assets/141c6219-518a-4229-bac3-775b58bb8870" width="640">  
+
+SLPCTRL.CTRLAレジスタの記述    
+
+<img src="https://github.com/user-attachments/assets//b23d1385-72a3-45b9-bec2-78a0704e28d6" width="640">    
+
 
 ## 動作確認のYoutube画像  
 https://youtu.be/LKW64Bx1fvs  
