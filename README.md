@@ -228,10 +228,15 @@ int main(void) {
 		PORTA.PIN7CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW3
   ```
 1.PORTA.PINnCTRLで各ピンの割り込みを設定する
+　下記 PINnCTRLレジスタの記述のISC[2:0] で割り込みを設定します。
+　・PORT_ISC_LEVEL_gcは0x05で/* Sense low Level */ローレベルで割り込みの設定です。(FallingでもOK)  
+ 　 なお、プルアップの有無もこのレジスタで各ピンごとに設定します。
+2.set_sleep_modeでsleep時の動作を設定する。
+　・SLEEP_MODE_PWR_DOWNではSleep時にパワーダウンする設定ですが、他にIDLE,STANDBY動作があります。、
+3.sleep_enable()でsleep時の動作を設定する。
 
 
-
-
+<img src="https://github.com/user-attachments/assets//b23d1385-72a3-45b9-bec2-78a0704e28d6" width="640">  
 
 割り込み処理  ISR(PORTA_PORT_vect)の記述
   ```c
