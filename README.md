@@ -198,10 +198,8 @@ PORTA.OUTCLR = IRLED_PIN(PIN3_bm);　だけでは”L"にならず、IR LEDが�
 PORTMUXで代替ピンの使用も可能になります。WO0のデフォールトの出力はPA3ですが、PA7にも出力できます。
 <img src="https://github.com/todopapa/TINY202_IR_REMOTE_ISR/assets/16860878/922acc81-6f77-4c1d-9545-99a526dc1c91" width="640">
 
-## Pin Chnge Interruptの使い方
-  詳細は工事中です。すみません,
-  コードを見ていただけると、これで動いています。  
-  
+## Pin Change InterruptとSleepの使い方
+  コードを参考に説明しますね。    
   下の参考資料 ”pin change interruptも参考になると思います。  
 
   main.c　の記述  
@@ -231,19 +229,29 @@ int main(void) {
 　下記 PINnCTRLレジスタの記述のISC[2:0] で割り込みを設定します。  
 　・PORT_ISC_LEVEL_gcは0x05で/* Sense low Level */ローレベルで割り込みの設定です。(FallingでもOK)    
  　 なお、プルアップの有無もこのレジスタで各ピンごとに設定します。  
+     
 2.set_sleep_modeでsleep時の動作を設定する。  
 　・SLEEP_MODE_PWR_DOWNではSleep時にパワーダウンする設定ですが、他にIDLE,STANDBY動作があります。  、
+   
 3.sleep_enable()でsleepイネーブルにする、
  sleepのctrlAレジスタにSleep_modeとsleep_enableの設定があります。Sleepイネーブルにします。  
+   
 4.sleep_cpu()でSleepに入る。
-　これは、定義をみると下記になっています。  
-
+　これは、定義をみると下記のようになっています。  
+  
  ```c
  SLEEP.CTRLA = SLEEP_MODE_PWR_DOWN | SLEEP_SEN_bm; // Power Downモード + Sleep Enable
 __asm__ __volatile__ ("sleep");  // ここでCPUがスリープ状態に入る
   ```
+asmのsleep命令とはなんでしょうか？ これはコンパイラが内部命令に置き換えるコマンドのようです。
+ChatGPT先生によるとAVR Instruction Set Manual (AVR命令セットマニュアル) 内にあり、  
 
-
+```yaml
+Mnemonic:  SLEEP
+Opcode:    1001 0101 1000 1000 (0x9588)
+Description: Enter Sleep Mode
+  ```
+と機械語の0x9588に変換されるとのことです。  
 
 割り込み処理  ISR(PORTA_PORT_vect)の記述
   ```c
