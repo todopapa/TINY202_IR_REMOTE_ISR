@@ -227,6 +227,12 @@ int main(void) {
 		PORTA.PIN6CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW2
 		PORTA.PIN7CTRL &= ~(PORT_ISC_LEVEL_gc);  // Turn off pin sense interrupt for SW3
   ```
+1.PORTA.PINnCTRLで各ピンの割り込みを設定する
+
+
+
+
+
 割り込み処理  ISR(PORTA_PORT_vect)の記述
   ```c
 // Pin change interrupt
